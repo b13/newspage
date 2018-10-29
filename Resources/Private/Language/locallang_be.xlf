@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file t3:id="1427832976" source-language="en" datatype="plaintext" original="messages" date="2014-02-07T20:22:32Z" product-name="frontend">
+		<header/>
+		<body>
+			<trans-unit id="news">
+				<source>News</source>
+			</trans-unit>
+			<trans-unit id="news.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="news.abstract">
+				<source>Abstract</source>
+			</trans-unit>
+
+			<trans-unit id="category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="category.name">
+				<source>Name</source>
+			</trans-unit>
+
+			<trans-unit id="list.label">
+				<source>Newspage: List all news</source>
+			</trans-unit>
+			<trans-unit id="latest.label">
+				<source>Newspage: Show a configurable amount of the latest news</source>
+			</trans-unit>
+			<trans-unit id="teaser.label">
+				<source>Newspage: Show teaser of a single news report</source>
+			</trans-unit>
+
+			<trans-unit id="settings.news">
+				<source>News report to be shown</source>
+			</trans-unit>
+			<trans-unit id="settings.limit">
+				<source>Maximum amount of news report to be shown</source>
+			</trans-unit>
+			<trans-unit id="settings.category">
+				<source>Category to show news from</source>
+			</trans-unit>
+
+			<trans-unit id="select.placeholder">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
