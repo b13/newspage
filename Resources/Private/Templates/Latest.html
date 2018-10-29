@@ -1,0 +1,9 @@
+<div>
+	<f:for each="{news}" as="report">
+		<div>
+			<p><f:link.typolink parameter="{report.uid}">{report.title}</f:link.typolink></p>
+			<p>{report.date -> f:format.date()}</p>
+			<p>{report.category.name}</p>
+		</div>
+	</f:for>
+</div>

@@ -1,0 +1,12 @@
+config.tx_extbase.persistence.classes {
+    B13\Newspage\Domain\Model\News {
+        mapping {
+            tableName = pages
+            columns {
+                tx_newspage_date.mapOnProperty = date
+                tx_newspage_category.mapOnProperty = category
+            }
+        }
+    }
+}
+
