@@ -5,17 +5,26 @@ $ext = 'B13.Newspage';
 $locallang = 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf';
 $flexformPath = 'FILE:EXT:newspage/Configuration/FlexForms/';
 
-$plugin = 'newspage_list';
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin($ext, 'List', $locallang . ':list.label');
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$plugin] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($plugin, $flexformPath . 'List.xml');
+$plugins = [
+    'List',
+    'Latest',
+    'Teaser'
+];
 
-$plugin = 'newspage_latest';
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin($ext, 'Latest', $locallang . ':latest.label');
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$plugin] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($plugin, $flexformPath . 'Latest.xml');
-
-$plugin = 'newspage_teaser';
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin($ext, 'Teaser', $locallang . ':teaser.label');
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$plugin] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($plugin, $flexformPath . 'Teaser.xml');
+foreach ($plugins as $plugin) {
+    $pluginSignature = 'newspage_' . strtolower($plugin);
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        $ext,
+        $plugin,
+        $locallang . ':' . strtolower($plugin) . '.label'
+    );
+    $GLOBALS['TCA']['tt_content']['types'][$pluginSignature] = $GLOBALS['TCA']['tt_content']['types']['header']; // TODO: why this type?
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        'pi_flexform',
+        $pluginSignature,
+        'after:header'
+    );
+    $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds'][',' . $pluginSignature] =
+        $flexformPath . $plugin . '.xml';
+}
