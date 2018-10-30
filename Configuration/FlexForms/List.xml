@@ -4,13 +4,13 @@
         <el>
             <settings.category>
                 <TCEforms>
-                    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:list.settings.category</label>
+                    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.category</label>
                     <config>
                         <type>select</type>
                         <renderType>selectSingle</renderType>
                         <items type="array">
                             <numIndex index="0" type="array">
-                                <numIndex index="0">LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.placeholder</numIndex>
+                                <numIndex index="0">LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.all</numIndex>
                                 <numIndex index="1">0</numIndex>
                             </numIndex>
                         </items>

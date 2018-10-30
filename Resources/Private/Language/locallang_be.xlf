@@ -43,6 +43,9 @@
 			<trans-unit id="select.placeholder">
 				<source></source>
 			</trans-unit>
+			<trans-unit id="select.all">
+				<source>All</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
