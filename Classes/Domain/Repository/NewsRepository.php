@@ -7,6 +7,10 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
+    protected $defaultOrderings = [
+        'tx_newspage_date' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+    ];
+
     public function createQuery()
     {
         $query = parent::createQuery();
@@ -20,10 +24,6 @@ class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     public function findLatest(array $options = []): QueryResultInterface
     {
         $query = $this->createQuery();
-        $query->setOrderings(
-            ['tx_newspage_date' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING]
-        );
-
         $matching = $query->getConstraint();
         if (isset($options['filter'])) {
             if (($category = $options['filter']['category']) > 0) {
