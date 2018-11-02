@@ -9,8 +9,30 @@ $newsType = ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news'
 
 $GLOBALS['TCA']['pages']['types'][$dokType]['showitem'] = str_replace('abstract,', '', $GLOBALS['TCA']['pages']['types'][1]['showitem']);
 
-// make title required for news
-$GLOBALS['TCA']['pages']['types'][$dokType]['columnsOverrides'] = ['title' => ['config' => ['eval' => 'required']]];
+// make title required for news and allow only one image in the media field to be used as the teaser image
+$GLOBALS['TCA']['pages']['types'][$dokType]['columnsOverrides'] = [
+    'title' => [
+        'config' => [
+            'eval' => 'required'
+        ]
+    ],
+    'media' => [
+        'config' => [
+            'maxitems' => 1,
+            'overrideChildTca' => [
+                'columns' => [
+                    'uid_local' => [
+                        'config' => [
+                            'appearance' => [
+                                'elementBrowserAllowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+];
 
 $columns = [
     'tx_newspage_date' => [
