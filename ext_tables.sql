@@ -1,6 +1,6 @@
 #
 # Extend table 'pages'
-# used for event pagetype
+# used for news pagetype
 #
 CREATE TABLE pages (
 	tx_newspage_date     date default null,

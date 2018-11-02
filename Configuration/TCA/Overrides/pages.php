@@ -2,10 +2,10 @@
 defined("TYPO3_MODE") or die('Access denied.');
 
 $dokType = 24;
-$eventType = ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news', $dokType];
+$newsType = ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news', $dokType];
 
 // adding the new doktypes to the type select
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('pages', 'doktype', $eventType);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('pages', 'doktype', $newsType);
 
 $GLOBALS['TCA']['pages']['types'][$dokType]['showitem'] = str_replace('abstract,', '', $GLOBALS['TCA']['pages']['types'][1]['showitem']);
 

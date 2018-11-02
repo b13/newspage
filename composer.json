@@ -3,10 +3,6 @@
   "type": "typo3-cms-extension",
   "license": "MIT",
   "description": "Adds a new page doktype for news.",
-  "keywords": [
-    "events",
-    "pages"
-  ],
   "homepage": "b13.de",
   "authors": [
     {
