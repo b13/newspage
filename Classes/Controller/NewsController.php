@@ -9,9 +9,13 @@ class NewsController extends ActionController
 
     /**
      * @var \B13\Newspage\Domain\Repository\NewsRepository
-     * @inject
      */
     protected $newsRepository;
+
+    public function injectNewsRepository(\B13\Newspage\Domain\Repository\NewsRepository $newsRepository)
+    {
+        $this->newsRepository = $newsRepository;
+    }
 
     /**
      * @param int $page
