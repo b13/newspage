@@ -6,7 +6,7 @@ defined('TYPO3_MODE') or die('Access denied.');
     'B13.Newspage',
     'List',
     ['News' => 'list'],
-    [],
+    ['News' => 'list'],
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 

@@ -13,14 +13,29 @@ class NewsController extends ActionController
      */
     protected $newsRepository;
 
-    public function listAction()
+    /**
+     * @param int $page
+     * @param array $filter
+     */
+    public function listAction(int $page = 1, array $filter = [])
     {
+        $limit = (int)$this->settings['limit'];
         if (($category = (int)$this->settings['category']) > 0) {
-            $news = $this->newsRepository->findByCategory($category);
-        } else {
-            $news = $this->newsRepository->findAll();
+            $filter['category'] = $category;
         }
-        $this->view->assign('news', $news);
+        $options = [
+            'limit' => $limit,
+            'offset' => ($page - 1) * $limit,
+            'filter' => $filter
+        ];
+
+        $news = $this->newsRepository->findForList($options);
+        $this->view->assignMultiple([
+            'news' => $news,
+            'filter' => $filter,
+            'page' => $page,
+            'lastpage' => ceil($this->newsRepository->countFiltered($filter) / $limit),
+        ]);
     }
 
     public function teaserAction()
