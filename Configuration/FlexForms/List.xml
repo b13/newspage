@@ -66,16 +66,7 @@
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
-                                <items>
-                                    <numIndex index="0">
-                                        <numIndex index="0">LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by.date</numIndex>
-                                        <numIndex index="1">date</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by.category</numIndex>
-                                        <numIndex index="1">category</numIndex>
-                                    </numIndex>
-                                </items>
+                                <itemsProcFunc>B13\Newspage\Service\FilterService->getFiltersForFlexform</itemsProcFunc>
                             </config>
                         </TCEforms>
                     </settings.filter.by>

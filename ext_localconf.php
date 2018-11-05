@@ -25,3 +25,15 @@ defined('TYPO3_MODE') or die('Access denied.');
     [],
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
+
+
+B13\Newspage\Service\FilterService::registerFilter(
+    'Date',
+    \B13\Newspage\Filter\DateFilter::class,
+    'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by.date'
+);
+B13\Newspage\Service\FilterService::registerFilter(
+    'Category',
+    \B13\Newspage\Filter\CategoryFilter::class,
+    'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by.category'
+);

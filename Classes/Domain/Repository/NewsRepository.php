@@ -2,6 +2,8 @@
 
 namespace B13\Newspage\Domain\Repository;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
@@ -67,17 +69,14 @@ class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $constraints = [];
         $constraints[] = $query->getConstraint();
         foreach ($filter as $field => $value) {
-            switch ($field) {
-                case 'date':
-                    $date =
-                        $value['year']
-                            ? $value['year'] .
-                            ($value['month'] ? '-' . $value['month'] . '%' : '%')
-                            : '';
-                    if ($date != '') {
-                        $constraints[] = $query->like('tx_newspage_date', $date);
-                    }
-                    break;
+            if ($value) {
+                $filterObj = GeneralUtility::makeInstance(ObjectManager::class)
+                    ->get($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][ucfirst($field)]['class']);
+
+                $constraint = call_user_func([$filterObj, 'getQueryConstraint'], $value, $query);
+                if (!is_null($constraint)) {
+                    $constraints[] = $constraint;
+                }
             }
         }
 

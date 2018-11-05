@@ -2,6 +2,7 @@
 
 namespace B13\Newspage\Controller;
 
+use B13\Newspage\Service\FilterService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class NewsController extends ActionController
@@ -33,6 +34,9 @@ class NewsController extends ActionController
             'filter' => $filter
         ];
 
+        if ($this->settings['filter']['show']) {
+            $this->view->assign('filterOptions', $this->getFilterOptions());
+        }
         $news = $this->newsRepository->findForList($options);
         $this->view->assignMultiple([
             'news' => $news,
@@ -58,5 +62,14 @@ class NewsController extends ActionController
         ];
         $news = $this->newsRepository->findLatest($settings);
         $this->view->assign('news', $news);
+    }
+
+    protected function getFilterOptions(): array
+    {
+        $filterOptions = [];
+        foreach (explode(',', $this->settings['filter']['by']) as $filter) {
+            $filterOptions[$filter]['items'] = FilterService::getFilterOptionsForFluid($filter);
+        }
+        return $filterOptions;
     }
 }

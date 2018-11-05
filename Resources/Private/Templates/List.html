@@ -1,8 +1,9 @@
 <f:if condition="{settings.filter.show}">
 	<f:form>
 		<f:form.hidden property="page" value="1" />
-		<f:form.select name="filter[date][year]" options="{2018: 2018, 2019: 2019}" prependOptionLabel="Please Choose" value="{filter.date.year}"/>
-		<f:form.select name="filter[date][month]" options="{01: 1, 02:2, 03:3, 04:4, 05:5, 06:6, 07:7, 08:8, 09:9, 10:10, 11:11, 12:12}" prependOptionLabel="Please Choose" value="{filter.date.month}"/>
+		<f:for each="{filterOptions}" key="type" as="options">
+			<f:render partial="Filter/{type}" arguments="{options: options, filter: filter}"/>
+		</f:for>
 		<f:form.submit value="Filter" />
 	</f:form>
 </f:if>
