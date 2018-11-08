@@ -19,30 +19,21 @@ class NewsController extends ActionController
     }
 
     /**
-     * @param int $page
      * @param array $filter
      */
-    public function listAction(int $page = 1, array $filter = [])
+    public function listAction(array $filter = [])
     {
-        $limit = (int)$this->settings['limit'];
         if (($category = (int)$this->settings['category']) > 0) {
             $filter['category'] = $category;
         }
-        $options = [
-            'limit' => $limit,
-            'offset' => ($page - 1) * $limit,
-            'filter' => $filter
-        ];
+        $news = $this->newsRepository->findFiltered($filter);
 
         if ($this->settings['filter']['show']) {
             $this->view->assign('filterOptions', $this->getFilterOptions());
         }
-        $news = $this->newsRepository->findForList($options);
         $this->view->assignMultiple([
             'news' => $news,
-            'filter' => $filter,
-            'page' => $page,
-            'lastpage' => ceil($this->newsRepository->countFiltered($filter) / $limit),
+            'filter' => $filter
         ]);
     }
 

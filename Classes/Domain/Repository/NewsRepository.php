@@ -47,13 +47,10 @@ class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return $query->execute();
     }
 
-    public function findForList(array $options = []): QueryResultInterface
+    public function findFiltered(array $filter = []): QueryResultInterface
     {
-        $query = $this
-            ->createQuery()
-            ->setLimit($options['limit'])
-            ->setOffset($options['offset']);
-        $query->matching($this->getConstraints($options['filter'], $query));
+        $query = $this->createQuery();
+        $query->matching($this->getConstraints($filter, $query));
         return $query->execute();
     }
 

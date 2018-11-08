@@ -1,6 +1,5 @@
 <f:if condition="{settings.filter.show}">
 	<f:form>
-		<f:form.hidden property="page" value="1" />
 		<f:for each="{filterOptions}" key="type" as="options">
 			<f:render partial="Filter/{type}" arguments="{options: options, filter: filter}"/>
 		</f:for>
@@ -8,31 +7,9 @@
 	</f:form>
 </f:if>
 
-<div>
-	<f:for each="{news}" as="report">
+
+<f:widget.paginate objects="{news}" as="paginatedNews" configuration="{itemsPerPage: settings.limit, maximumNumberOfLinks: 4}">
+	<f:for each="{paginatedNews}" as="report">
 		<f:render partial="Report" arguments="{report: report}"/>
 	</f:for>
-</div>
-
-<!-- todo: do correctly -->
-<f:if condition="{page} > 1">
-	<f:then>
-		<f:link.action arguments="{page: 1, filter: filter}">&lt;&lt;</f:link.action>
-		<f:link.action arguments="{page: '{page -1}', filter: filter}">&lt;</f:link.action>
-		<f:link.action arguments="{page: '{page -1}', filter: filter}">{page -1}</f:link.action>
-	</f:then>
-	<f:else>
-		&lt;
-	</f:else>
-</f:if>
-{page}
-<f:if condition="{page} < {lastpage}">
-	<f:then>
-		<f:link.action arguments="{page: '{page +1}', filter: filter}">{page +1}</f:link.action>
-		<f:link.action arguments="{page: '{page +1}', filter: filter}">&gt;</f:link.action>
-		<f:link.action arguments="{page: '{lastpage}', filter: filter}">&gt;&gt;</f:link.action>
-	</f:then>
-	<f:else>
-		&gt;
-	</f:else>
-</f:if>
+</f:widget.paginate>
