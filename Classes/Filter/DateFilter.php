@@ -21,8 +21,16 @@ class DateFilter implements FilterInterface
             ->where(
                 $queryBuilder->expr()->eq('doktype', 24)
             )
-            ->execute();
-        return $years->fetchAll(\PDO::FETCH_ASSOC);
+            ->execute()
+            ->fetchAll(\PDO::FETCH_COLUMN);
+
+        // in order for the f:form.select view helper to send and display the correct values,
+        // we have to make the value and key the same
+        $return = [];
+        foreach ($years as $year) {
+            $return[$year] = $year;
+        }
+        return $return;
     }
 
 
