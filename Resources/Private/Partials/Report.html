@@ -1,0 +1,12 @@
+<div>
+    <p>
+        <f:link.typolink parameter="{report.uid}">{report.title}</f:link.typolink>
+    </p>
+    <f:if condition="{report.media.uid}">
+        <f:image src="{report.media.uid}" treatIdAsReference="1" />
+    </f:if>
+
+    <p>{report.date -> f:format.date()}</p>
+    <p>{report.category.name}</p>
+    <p>{report.abstract}</p>
+</div>

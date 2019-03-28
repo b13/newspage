@@ -4,7 +4,7 @@
         <el>
             <settings.limit>
                 <TCEforms>
-                    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit</label>
+                    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit.latest</label>
                     <config>
                         <type>input</type>
                         <default>5</default>

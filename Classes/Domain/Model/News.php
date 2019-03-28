@@ -14,6 +14,12 @@ class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /** @var \B13\Newspage\Domain\Model\Category */
     protected $category;
 
+    /** @var string */
+    protected $abstract;
+
+    /** @var \TYPO3\CMS\Extbase\Domain\Model\FileReference */
+    protected $media;
+
     /**
      * @return string
      */
@@ -54,5 +60,37 @@ class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setCategory(Category $category): void
     {
         $this->category = $category;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAbstract(): ?string
+    {
+        return $this->abstract;
+    }
+
+    /**
+     * @param string $abstract
+     */
+    public function setAbstract(string $abstract): void
+    {
+        $this->abstract = $abstract;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    public function getMedia(): ?\TYPO3\CMS\Extbase\Domain\Model\FileReference
+    {
+        return $this->media;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $media
+     */
+    public function setMedia(\TYPO3\CMS\Extbase\Domain\Model\FileReference $media): void
+    {
+        $this->media = $media;
     }
 }

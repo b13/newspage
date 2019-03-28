@@ -2,15 +2,37 @@
 defined("TYPO3_MODE") or die('Access denied.');
 
 $dokType = 24;
-$eventType = ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news', $dokType];
+$newsType = ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news', $dokType];
 
 // adding the new doktypes to the type select
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('pages', 'doktype', $eventType);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('pages', 'doktype', $newsType);
 
 $GLOBALS['TCA']['pages']['types'][$dokType]['showitem'] = str_replace('abstract,', '', $GLOBALS['TCA']['pages']['types'][1]['showitem']);
 
-// make title required for news
-$GLOBALS['TCA']['pages']['types'][$dokType]['columnsOverrides'] = ['title' => ['config' => ['eval' => 'required']]];
+// make title required for news and allow only one image in the media field to be used as the teaser image
+$GLOBALS['TCA']['pages']['types'][$dokType]['columnsOverrides'] = [
+    'title' => [
+        'config' => [
+            'eval' => 'required'
+        ]
+    ],
+    'media' => [
+        'config' => [
+            'maxitems' => 1,
+            'overrideChildTca' => [
+                'columns' => [
+                    'uid_local' => [
+                        'config' => [
+                            'appearance' => [
+                                'elementBrowserAllowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+];
 
 $columns = [
     'tx_newspage_date' => [
@@ -27,6 +49,7 @@ $columns = [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
+            'default' => 0,
             'items' => [
                 ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.placeholder', 0]
             ],

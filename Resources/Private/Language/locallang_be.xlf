@@ -33,15 +33,42 @@
 			<trans-unit id="settings.news">
 				<source>News report to be shown</source>
 			</trans-unit>
-			<trans-unit id="settings.limit">
-				<source>Maximum amount of news report to be shown</source>
+			<trans-unit id="settings.limit.latest">
+				<source>Maximum number of latest news to show</source>
+			</trans-unit>
+			<trans-unit id="settings.limit.list">
+				<source>Maximum number of news per page</source>
 			</trans-unit>
 			<trans-unit id="settings.category">
 				<source>Category to show news from</source>
 			</trans-unit>
 
+			<trans-unit id="settings.filter.show">
+				<source>Show a filter</source>
+			</trans-unit>
+			<trans-unit id="settings.filter.by">
+				<source>Allow filtering by the following attributes</source>
+			</trans-unit>
+			<trans-unit id="settings.filter.by.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="settings.filter.by.category">
+				<source>Category (will have no effect if only one category is selected in General settings)</source>
+			</trans-unit>
+
+
+			<trans-unit id="settings.tab.general">
+				<source>General</source>
+			</trans-unit>
+			<trans-unit id="settings.tab.filter">
+				<source>Filter</source>
+			</trans-unit>
+
 			<trans-unit id="select.placeholder">
 				<source></source>
+			</trans-unit>
+			<trans-unit id="select.all">
+				<source>All</source>
 			</trans-unit>
 		</body>
 	</file>
