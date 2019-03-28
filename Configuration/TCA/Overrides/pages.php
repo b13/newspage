@@ -49,6 +49,7 @@ $columns = [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
+            'default' => 0,
             'items' => [
                 ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.placeholder', 0]
             ],
