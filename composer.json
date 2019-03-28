@@ -3,11 +3,11 @@
   "type": "typo3-cms-extension",
   "license": "MIT",
   "description": "Adds a new page doktype for news.",
-  "homepage": "b13.de",
+  "homepage": "b13.com",
   "authors": [
     {
       "name": "b13",
-      "email": "info@b13.de"
+      "email": "info@b13.com"
     }
   ],
   "require": {
