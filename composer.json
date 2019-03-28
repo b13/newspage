@@ -10,7 +10,6 @@
       "email": "info@b13.de"
     }
   ],
-  "version": "0.1.0",
   "require": {
     "typo3/cms-core": "^8.0 || ^9.0"
   },
