@@ -10,26 +10,6 @@
                 </TCEforms>
                 <type>array</type>
                 <el>
-                    <settings.category>
-                        <TCEforms>
-                            <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.category</label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.all
-                                        </numIndex>
-                                        <numIndex index="1">0</numIndex>
-                                    </numIndex>
-                                </items>
-                                <foreign_table>tx_newspage_domain_model_category</foreign_table>
-                                <maxitems>1</maxitems>
-                                <size>1</size>
-                            </config>
-                        </TCEforms>
-                    </settings.category>
                     <settings.limit>
                         <TCEforms>
                             <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit.list</label>
@@ -43,6 +23,15 @@
                 </el>
             </ROOT>
         </sDEF>
+        <preFilters>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.tab.preFilters</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el type="array"></el>
+            </ROOT>
+        </preFilters>
         <filter>
             <ROOT>
                 <TCEforms>
@@ -62,6 +51,7 @@
                     <settings.filter.by>
                         <TCEforms>
                             <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by</label>
+                            <description>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by.description</description>
                             <displayCond>FIELD:settings.filter.show:=:1</displayCond>
                             <config>
                                 <type>select</type>

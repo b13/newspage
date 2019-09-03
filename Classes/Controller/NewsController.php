@@ -5,8 +5,17 @@ namespace B13\Newspage\Controller;
 use B13\Newspage\Service\FilterService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
+/**
+ * Class NewsController
+ * @package B13\Newspage\Controller
+ */
 class NewsController extends ActionController
 {
+
+    /**
+     * @var array
+     */
+    protected $preFilters = [];
 
     /**
      * @var \B13\Newspage\Domain\Repository\NewsRepository
@@ -21,11 +30,15 @@ class NewsController extends ActionController
     /**
      * @param array $filter
      */
-    public function listAction(array $filter = [])
+    public function listAction(array $filter = []): void
     {
-        if (($category = (int)$this->settings['category']) > 0) {
-            $filter['category'] = $category;
+        foreach ($this->settings['prefilters'] as $type => $value) {
+            if ($value !== '') {
+                $filter[$type] = $value;
+                $this->preFilters[] = $type;
+            }
         }
+
         $news = $this->newsRepository->findFiltered($filter);
 
         if ($this->settings['filter']['show'] && $this->settings['filter']['by'] !== '') {
@@ -37,13 +50,19 @@ class NewsController extends ActionController
         ]);
     }
 
-    public function teaserAction()
+    /**
+     *
+     */
+    public function teaserAction(): void
     {
         $report = $this->newsRepository->findByUid((int)$this->settings['news']);
         $this->view->assign('report', $report);
     }
 
-    public function latestAction()
+    /**
+     *
+     */
+    public function latestAction(): void
     {
         $settings = [
             'limit' => (int)$this->settings['limit'],
@@ -55,11 +74,16 @@ class NewsController extends ActionController
         $this->view->assign('news', $news);
     }
 
+    /**
+     * @return array
+     */
     protected function getFilterOptions(): array
     {
         $filterOptions = [];
         foreach (explode(',', $this->settings['filter']['by']) as $filter) {
-            $filterOptions[$filter]['items'] = FilterService::getFilterOptionsForFluid($filter);
+            if (!in_array(strtolower($filter), $this->preFilters)) {
+                $filterOptions[$filter]['items'] = FilterService::getFilterOptionsForFluid($filter);
+            }
         }
         return $filterOptions;
     }
