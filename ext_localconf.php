@@ -2,6 +2,10 @@
 
 defined('TYPO3_MODE') or die('Access denied.');
 
+// Hook to dynamically add filters to flexform
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Configuration\FlexForm\FlexFormTools::class]['flexParsing'][]
+    = \B13\Newspage\Hooks\PrefilterFlexform::class;
+
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     'B13.Newspage',
     'List',

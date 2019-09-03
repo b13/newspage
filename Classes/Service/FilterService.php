@@ -7,11 +7,12 @@ use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 class FilterService
 {
-    public static function registerFilter(string $name, string $class, string $label): void
+    public static function registerFilter(string $name, string $class, string $label, string $flexFormPath = ''): void
     {
         $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][$name] = [
             'class' => $class,
-            'label' => $label
+            'label' => $label,
+            'flexForm' => $flexFormPath
         ];
     }
 
