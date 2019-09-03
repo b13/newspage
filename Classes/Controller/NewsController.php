@@ -9,6 +9,11 @@ class NewsController extends ActionController
 {
 
     /**
+     * @var array
+     */
+    protected $preFilter = [];
+
+    /**
      * @var \B13\Newspage\Domain\Repository\NewsRepository
      */
     protected $newsRepository;
@@ -23,9 +28,14 @@ class NewsController extends ActionController
      */
     public function listAction(array $filter = [])
     {
-        if (($category = (int)$this->settings['category']) > 0) {
-            $filter['category'] = $category;
+        $this->preFilter = [];
+        foreach ($this->settings['prefilter'] as $type => $value) {
+            if ($value !== '') {
+                $filter[$type] = $value;
+                $this->preFilter[] = $type;
+            }
         }
+
         $news = $this->newsRepository->findFiltered($filter);
 
         if ($this->settings['filter']['show'] && $this->settings['filter']['by'] !== '') {
@@ -59,7 +69,9 @@ class NewsController extends ActionController
     {
         $filterOptions = [];
         foreach (explode(',', $this->settings['filter']['by']) as $filter) {
-            $filterOptions[$filter]['items'] = FilterService::getFilterOptionsForFluid($filter);
+            if (!in_array(strtolower($filter), $this->preFilter)) {
+                $filterOptions[$filter]['items'] = FilterService::getFilterOptionsForFluid($filter);
+            }
         }
         return $filterOptions;
     }

@@ -50,7 +50,7 @@
 				<source>Allow filtering by the following attributes</source>
 			</trans-unit>
 			<trans-unit id="settings.filter.by.description">
-				<source>These filters will only have an effect if the corresponding filter has not been set in the "Filter" tab.</source>
+				<source>These filters will only be shown if the corresponding filter has not been set in the "Filter" tab.</source>
 			</trans-unit>
 			<trans-unit id="settings.filter.by.date">
 				<source>Date</source>
