@@ -1,0 +1,18 @@
+<TCEforms>
+    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.category</label>
+    <config>
+        <type>select</type>
+        <renderType>selectSingle</renderType>
+        <items type="array">
+            <numIndex index="0" type="array">
+                <numIndex index="0">
+                    LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.all
+                </numIndex>
+                <numIndex index="1">0</numIndex>
+            </numIndex>
+        </items>
+        <foreign_table>tx_newspage_domain_model_category</foreign_table>
+        <maxitems>1</maxitems>
+        <size>1</size>
+    </config>
+</TCEforms>
