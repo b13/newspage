@@ -26,7 +26,7 @@ class PrefilterFlexform
                     $file = GeneralUtility::getFileAbsFileName($filter['flexForm']);
                     $content = file_get_contents($file);
                     if ($content) {
-                        $dataStructure['sheets']['preFilter']['ROOT']['el']['settings.prefilter.' . strtolower($type)] = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($content);
+                        $dataStructure['sheets']['preFilters']['ROOT']['el']['settings.prefilters.' . strtolower($type)] = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($content);
                     }
                 }
             }

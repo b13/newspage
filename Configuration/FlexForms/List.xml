@@ -23,15 +23,15 @@
                 </el>
             </ROOT>
         </sDEF>
-        <preFilter>
+        <preFilters>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.tab.preFilter</sheetTitle>
+                    <sheetTitle>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.tab.preFilters</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el type="array"></el>
             </ROOT>
-        </preFilter>
+        </preFilters>
         <filter>
             <ROOT>
                 <TCEforms>

@@ -63,7 +63,7 @@
 			<trans-unit id="settings.tab.general">
 				<source>General</source>
 			</trans-unit>
-			<trans-unit id="settings.tab.preFilter">
+			<trans-unit id="settings.tab.preFilters">
 				<source>Filter</source>
 			</trans-unit>
 			<trans-unit id="settings.tab.filter">
