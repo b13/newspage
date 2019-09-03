@@ -5,6 +5,10 @@ namespace B13\Newspage\Controller;
 use B13\Newspage\Service\FilterService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
+/**
+ * Class NewsController
+ * @package B13\Newspage\Controller
+ */
 class NewsController extends ActionController
 {
 
@@ -26,7 +30,7 @@ class NewsController extends ActionController
     /**
      * @param array $filter
      */
-    public function listAction(array $filter = [])
+    public function listAction(array $filter = []): void
     {
         foreach ($this->settings['prefilters'] as $type => $value) {
             if ($value !== '') {
@@ -46,13 +50,19 @@ class NewsController extends ActionController
         ]);
     }
 
-    public function teaserAction()
+    /**
+     *
+     */
+    public function teaserAction(): void
     {
         $report = $this->newsRepository->findByUid((int)$this->settings['news']);
         $this->view->assign('report', $report);
     }
 
-    public function latestAction()
+    /**
+     *
+     */
+    public function latestAction(): void
     {
         $settings = [
             'limit' => (int)$this->settings['limit'],
@@ -64,6 +74,9 @@ class NewsController extends ActionController
         $this->view->assign('news', $news);
     }
 
+    /**
+     * @return array
+     */
     protected function getFilterOptions(): array
     {
         $filterOptions = [];
