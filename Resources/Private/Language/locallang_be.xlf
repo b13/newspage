@@ -27,7 +27,7 @@
 				<source>Newspage: Show a configurable amount of the latest news</source>
 			</trans-unit>
 			<trans-unit id="teaser.label">
-				<source>Newspage: Show teaser of a single news report</source>
+				<source>Newspage: Show teaser of selected news</source>
 			</trans-unit>
 
 			<trans-unit id="settings.news">
