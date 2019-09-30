@@ -1,1 +1,3 @@
-<f:render partial="Report" arguments="{report: report}"/>
+<f:for each="{news}" as="report">
+    <f:render partial="Report" arguments="{report: report}"/>
+</f:for>

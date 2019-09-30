@@ -10,7 +10,6 @@
                         <internal_type>db</internal_type>
                         <allowed>pages</allowed>
                         <minitems>1</minitems>
-                        <size>1</size>
                         <suggestOptions>
                             <pages>
                                 <searchCondition>doktype=24</searchCondition>

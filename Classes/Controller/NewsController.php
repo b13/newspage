@@ -55,8 +55,12 @@ class NewsController extends ActionController
      */
     public function teaserAction(): void
     {
-        $report = $this->newsRepository->findByUid((int)$this->settings['news']);
-        $this->view->assign('report', $report);
+        $uids = explode(',', $this->settings['news']);
+        $news = [];
+        foreach ($uids as $uid) {
+            $news[] = $this->newsRepository->findByUid((int)$uid);
+        }
+        $this->view->assign('news', $news);
     }
 
     /**
