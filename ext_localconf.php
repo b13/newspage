@@ -34,11 +34,11 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Configuration\FlexForm
 B13\Newspage\Service\FilterService::registerFilter(
     'Date',
     \B13\Newspage\Filter\DateFilter::class,
-    'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by.date'
+    'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news.date'
 );
 B13\Newspage\Service\FilterService::registerFilter(
     'Category',
     \B13\Newspage\Filter\CategoryFilter::class,
-    'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by.category',
+    'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:category',
     'EXT:newspage/Configuration/FlexForms/Filter/Category.xml'
 );

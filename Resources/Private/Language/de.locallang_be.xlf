@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
-	<file t3:id="1427832976" source-language="en" datatype="plaintext" original="messages" date="2014-02-07T20:22:32Z" product-name="frontend">
+	<file t3:id="1427832976" source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-02-07T20:22:32Z" product-name="frontend">
 		<header/>
 		<body>
 			<trans-unit id="news">
 				<source>News</source>
+                <target>News</target>
 			</trans-unit>
 			<trans-unit id="news.date">
 				<source>Date</source>
+                <target>Datum</target>
 			</trans-unit>
 			<trans-unit id="news.abstract">
 				<source>Abstract</source>
+                <target>Kurzfassung</target>
 			</trans-unit>
 
 			<trans-unit id="category">
 				<source>Category</source>
+                <target>Kategorie</target>
 			</trans-unit>
 			<trans-unit id="category.name">
 				<source>Name</source>
@@ -22,39 +26,51 @@
 
 			<trans-unit id="list.label">
 				<source>Newspage: List all news</source>
+                <target>Newspage: Alle Nachrichten ausgeben</target>
 			</trans-unit>
 			<trans-unit id="latest.label">
 				<source>Newspage: Show a configurable amount of the latest news</source>
+                <target>Newspage: Beliebige Anzahl der neuesten Nachrichten anzeigen</target>
 			</trans-unit>
 			<trans-unit id="teaser.label">
 				<source>Newspage: Show teaser of selected news</source>
+                <target>Newspage: Teaser für ausgewählte Nachrichten anzeigen</target>
 			</trans-unit>
 
 			<trans-unit id="settings.news">
 				<source>News report to be shown</source>
+                <target>Nachricht die gezeigt werden soll</target>
 			</trans-unit>
 			<trans-unit id="settings.limit.latest">
 				<source>Maximum number of latest news to show</source>
+                <target>Maximale Anzahl von Nachrichten die angezeigt werden sollen</target>
 			</trans-unit>
 			<trans-unit id="settings.limit.list">
 				<source>Maximum number of news per page</source>
+                <target>Maximale Anzahl von Nachrichten pro Seite</target>
 			</trans-unit>
 			<trans-unit id="settings.category">
 				<source>Category to show news from</source>
+                <target>Kategorie aus der Nachrichten angezeigt werden soll</target>
 			</trans-unit>
 
 			<trans-unit id="settings.filter.show">
 				<source>Show a frontend filter</source>
+                <target>Auf der Seite einen Filter anzeigen</target>
 			</trans-unit>
 			<trans-unit id="settings.filter.by">
 				<source>Allow filtering by the following attributes</source>
+                <target>Folgende Filter aktivieren</target>
 			</trans-unit>
 			<trans-unit id="settings.filter.by.description">
 				<source>These filters will only be shown if the corresponding filter has not been set in the "Filter" tab.</source>
+                <target>Diese Filter werden nur ausgegeben, wenn in dem "Filter" Tab noch nichts vorausgewählt wurde.</target>
 			</trans-unit>
+
 
 			<trans-unit id="settings.tab.general">
 				<source>General</source>
+                <target>Allgemein</target>
 			</trans-unit>
 			<trans-unit id="settings.tab.preFilters">
 				<source>Filter</source>
@@ -68,6 +84,7 @@
 			</trans-unit>
 			<trans-unit id="select.all">
 				<source>All</source>
+                <target>Alle</target>
 			</trans-unit>
 		</body>
 	</file>
