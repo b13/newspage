@@ -86,6 +86,39 @@
 				<source>All</source>
                 <target>Alle</target>
 			</trans-unit>
+
+
+
+			<trans-unit id="newContentWizard.header">
+				<source>News</source>
+			</trans-unit>
+
+			<trans-unit id="newContentWizard.list.title">
+				<source>List News</source>
+				<target>Nachrichten Liste</target>
+			</trans-unit>
+			<trans-unit id="newContentWizard.list.description">
+				<source>Shows all news on a given storage page, with optional filtering by categories or subcategories and easily extensible frontend filters and search.</source>
+				<target>Zeigt alle Nachrichten aus einer gewählten Seite. Optional können nur Nachrichten aus bestimmten Kategorien oder Subkategorien, sowie konfigurierbare Filter und eine Suche, angezeigt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="newContentWizard.teaser.title">
+				<source>News Teaser</source>
+				<target>Nachrichten Teaser</target>
+			</trans-unit>
+			<trans-unit id="newContentWizard.teaser.description">
+				<source>Shows teasers of specifically chosen news.</source>
+				<target>Zeigt Teaser für einzeln ausgewählte Nachrichten.</target>
+			</trans-unit>
+
+			<trans-unit id="newContentWizard.latest.title">
+				<source>Latest News</source>
+				<target>Neueste Nachrichten</target>
+			</trans-unit>
+			<trans-unit id="newContentWizard.latest.description">
+				<source>Shows a configurable amount of newest news, optionally filtered by category or subcategory.</source>
+				<target>Zeigt eine konfigurierbare Anzahl der neuesten Nachrichten an. Optional nur aus einer Kategorie oder Subkategorie.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
