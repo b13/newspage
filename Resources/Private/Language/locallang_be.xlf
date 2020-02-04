@@ -69,6 +69,32 @@
 			<trans-unit id="select.all">
 				<source>All</source>
 			</trans-unit>
+
+			<trans-unit id="newContentWizard.header">
+				<source>News</source>
+			</trans-unit>
+
+			<trans-unit id="newContentWizard.list.title">
+				<source>List News</source>
+			</trans-unit>
+			<trans-unit id="newContentWizard.list.description">
+				<source>Shows all news on a given storage page, with optional filtering by categories or subcategories and easily extensible frontend filters and search.</source>
+			</trans-unit>
+
+			<trans-unit id="newContentWizard.teaser.title">
+				<source>News Teaser</source>
+			</trans-unit>
+			<trans-unit id="newContentWizard.teaser.description">
+				<source>Shows teasers of specifically chosen news.</source>
+			</trans-unit>
+
+			<trans-unit id="newContentWizard.latest.title">
+				<source>Latest News</source>
+			</trans-unit>
+			<trans-unit id="newContentWizard.latest.description">
+				<source>Shows a configurable amount of newest news, optionally filtered by category or subcategory.</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
