@@ -1,0 +1,28 @@
+mod.wizards.newContentElement.wizardItems.tx_newspage {
+    header = LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:newContentWizard.header
+
+    elements {
+        list {
+            title = LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:newContentWizard.list.title
+            description = LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:newContentWizard.list.description
+            tt_content_defValues.CType = newspage_list
+            iconIdentifier = content-plugin
+        }
+
+        teaser {
+            title = LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:newContentWizard.teaser.title
+            description = LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:newContentWizard.teaser.description
+            tt_content_defValues.CType = newspage_teaser
+            iconIdentifier = content-plugin
+        }
+
+        latest {
+            title = LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:newContentWizard.latest.title
+            description = LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:newContentWizard.latest.description
+            tt_content_defValues.CType = newspage_latest
+            iconIdentifier = content-plugin
+        }
+    }
+
+    show = *
+}

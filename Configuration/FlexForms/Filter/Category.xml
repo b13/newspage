@@ -1,5 +1,5 @@
 <TCEforms>
-    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.category</label>
+    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:category</label>
     <config>
         <type>select</type>
         <renderType>selectSingle</renderType>
