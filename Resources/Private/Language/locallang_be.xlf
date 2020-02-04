@@ -94,7 +94,6 @@
 			<trans-unit id="newContentWizard.latest.description">
 				<source>Shows a configurable amount of newest news, optionally filtered by category or subcategory.</source>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>
