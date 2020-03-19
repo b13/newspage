@@ -39,7 +39,9 @@ class NewsController extends ActionController
             }
         }
 
-        $news = $this->newsRepository->findFiltered($filter);
+        $options['filter'] = $filter;
+
+        $news = $this->newsRepository->findFiltered($options);
 
         if ($this->settings['filter']['show'] && $this->settings['filter']['by'] !== '') {
             $this->view->assign('filterOptions', $this->getFilterOptions());

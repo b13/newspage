@@ -44,13 +44,26 @@ class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             $query->setLimit($limit);
         }
 
+        if ($offset = $options['offset']) {
+            $query->setOffset($offset);
+        }
+
         return $query->execute();
     }
 
-    public function findFiltered(array $filter = []): QueryResultInterface
+    public function findFiltered(array $options = []): QueryResultInterface
     {
         $query = $this->createQuery();
-        $query->matching($this->getConstraints($filter, $query));
+        $query->matching($this->getConstraints($options['filter'], $query));
+
+        if ($limit = $options['limit']) {
+            $query->setLimit($limit);
+        }
+
+        if ($offset = $options['offset']) {
+            $query->setOffset($offset);
+        }
+
         return $query->execute();
     }
 
