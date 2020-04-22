@@ -5,7 +5,7 @@ return [
     'ctrl' => [
         'title' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:category',
         'label' => 'name',
-        'iconfile' => 'EXT:newspage/ext_icon.png', // TODO: icon
+        'iconfile' => 'EXT:newspage/Resources/Public/Icons/Extension.svg',
         'sorting' => 'sorting',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',

@@ -16,7 +16,8 @@ foreach ($plugins as $plugin) {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
         $ext,
         $plugin,
-        $locallang . ':' . strtolower($plugin) . '.label'
+        $locallang . ':' . strtolower($plugin) . '.label',
+        'EXT:newspage/Resources/Public/Icons/Extension.svg'
     );
     $GLOBALS['TCA']['tt_content']['types'][$pluginSignature] = $GLOBALS['TCA']['tt_content']['types']['header']; // TODO: why this type?
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
