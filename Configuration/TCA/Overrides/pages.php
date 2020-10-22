@@ -37,6 +37,7 @@ $GLOBALS['TCA']['pages']['types'][$dokType]['columnsOverrides'] = [
 $columns = [
     'tx_newspage_date' => [
         'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news.date',
+        'l10n_mode' => 'exclude',
         'config' => [
             'type' => 'input',
             'renderType' => 'inputDateTime',
@@ -46,6 +47,7 @@ $columns = [
     ],
     'tx_newspage_category' => [
         'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:category',
+        'l10n_mode' => 'exclude',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
