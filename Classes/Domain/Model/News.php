@@ -2,17 +2,18 @@
 
 namespace B13\Newspage\Domain\Model;
 
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
 class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
     /** @var string */
     protected $title;
 
     /** @var \DateTime */
     protected $date;
 
-    /** @var \B13\Newspage\Domain\Model\Category */
-    protected $category;
+    /** @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\B13\Newspage\Domain\Model\Category> */
+    protected $categories;
 
     /** @var string */
     protected $abstract;
@@ -47,19 +48,19 @@ class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return Category
+     * @return ObjectStorage<\B13\Newspage\Domain\Model\Category>
      */
-    public function getCategory(): ?Category
+    public function getCategories(): ObjectStorage
     {
-        return $this->category;
+        return $this->categories;
     }
 
     /**
-     * @param Category $category
+     * @param ObjectStorage $category
      */
-    public function setCategory(Category $category): void
+    public function setCategories(ObjectStorage $categories): void
     {
-        $this->category = $category;
+        $this->categories = $categories;
     }
 
     /**

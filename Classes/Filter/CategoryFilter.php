@@ -24,8 +24,8 @@ class CategoryFilter implements FilterInterface
         return $this->categoryRepository->findAll()->toArray();
     }
 
-    public function getQueryConstraint($filter, QueryInterface $query): ?ConstraintInterface
+    public function getQueryConstraint($filter, QueryInterface $query): ConstraintInterface
     {
-        return $query->equals('tx_newspage_category', $filter);
+        return $query->contains('categories', $filter);
     }
 }
