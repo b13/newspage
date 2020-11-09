@@ -16,6 +16,9 @@
 			<trans-unit id="category">
 				<source>Category</source>
 			</trans-unit>
+			<trans-unit id="categories">
+				<source>Multiple Categories</source>
+			</trans-unit>
 			<trans-unit id="category.name">
 				<source>Name</source>
 			</trans-unit>

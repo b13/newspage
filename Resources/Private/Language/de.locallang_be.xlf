@@ -20,6 +20,10 @@
 				<source>Category</source>
 				<target>Kategorie</target>
 			</trans-unit>
+			<trans-unit id="categories">
+				<source>Multiple Categories</source>
+				<target>Mehrere Kategorien</target>
+			</trans-unit>
 			<trans-unit id="category.name">
 				<source>Name</source>
 			</trans-unit>
