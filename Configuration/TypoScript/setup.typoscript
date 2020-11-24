@@ -4,7 +4,7 @@ config.tx_extbase.persistence.classes {
             tableName = pages
             columns {
                 tx_newspage_date.mapOnProperty = date
-                tx_newspage_category.mapOnProperty = category
+                tx_newspage_categories.mapOnProperty = categories
             }
         }
     }

@@ -2,24 +2,40 @@
 
 namespace B13\Newspage\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class News extends AbstractEntity
 {
-    /** @var string */
+    /**
+     * @var string
+     */
     protected $title;
 
-    /** @var \DateTime */
+    /**
+     * @var \DateTime
+     */
     protected $date;
 
-    /** @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\B13\Newspage\Domain\Model\Category> */
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\B13\Newspage\Domain\Model\Category>
+     */
     protected $categories;
 
-    /** @var string */
+    /**
+     * @var string
+     */
     protected $abstract;
 
-    /** @var \TYPO3\CMS\Extbase\Domain\Model\FileReference */
+    /**
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
     protected $media;
+
+    public function __construct()
+    {
+        $this->categories = new ObjectStorage();
+    }
 
     /**
      * @return string
@@ -48,11 +64,19 @@ class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return ObjectStorage<\B13\Newspage\Domain\Model\Category>
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\B13\Newspage\Domain\Model\Category>
      */
     public function getCategories(): ObjectStorage
     {
         return $this->categories;
+    }
+
+    /**
+     * @return \B13\Newspage\Domain\Model\Category|null
+     */
+    public function getCategory(): ?Category
+    {
+        return $this->categories->offsetGet(0);
     }
 
     /**

@@ -63,7 +63,7 @@ defined('TYPO3_MODE') or die('Access denied.');
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'pages',
         'tx_newspage',
-        'tx_newspage_date,--linebreak--,tx_newspage_category,--linebreak--,
+        'tx_newspage_date,--linebreak--,tx_newspage_categories,--linebreak--,
     abstract;LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news.abstract;'
     );
 
