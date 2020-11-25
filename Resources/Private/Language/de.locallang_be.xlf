@@ -21,11 +21,30 @@
 				<target>Kategorie</target>
 			</trans-unit>
 			<trans-unit id="categories">
-				<source>Multiple Categories</source>
-				<target>Mehrere Kategorien</target>
+				<source>Categories</source>
+				<target>Kategorien</target>
 			</trans-unit>
 			<trans-unit id="category.name">
 				<source>Name</source>
+			</trans-unit>
+
+
+			<trans-unit id="filter.month">
+				<source>Month</source>
+				<target>Monat</target>
+			</trans-unit>
+			<trans-unit id="filter.year">
+				<source>Year</source>
+				<target>Jahr</target>
+			</trans-unit>
+			<trans-unit id="filter.categories">
+				<source>Multiple Categories</source>
+				<target>Mehrere Kategorien</target>
+			</trans-unit>
+
+			<trans-unit id="select.placeholder">
+				<source>Please Choose</source>
+				<target>Bitte Wählens</target>
 			</trans-unit>
 
 			<trans-unit id="list.label">

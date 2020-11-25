@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file t3:id="1427832976" source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-02-07T20:22:32Z" product-name="frontend">
+		<header/>
+		<body>
+			<trans-unit id="filter.month">
+				<source>Month</source>
+				<target>Monat</target>
+			</trans-unit>
+			<trans-unit id="filter.year">
+				<source>Year</source>
+				<target>Jahr</target>
+			</trans-unit>
+			<trans-unit id="filter.categories">
+				<source>Multiple Categories</source>
+				<target>Mehrere Kategorien</target>
+			</trans-unit>
+
+			<trans-unit id="select.placeholder">
+				<source>Please choose</source>
+				<target>Bitte wählen</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

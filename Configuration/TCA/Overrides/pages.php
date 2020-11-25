@@ -47,7 +47,7 @@ defined('TYPO3_MODE') or die('Access denied.');
             ]
         ],
         'tx_newspage_categories' => [
-            'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:category',
+            'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:categories',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'select',

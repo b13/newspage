@@ -1,9 +1,24 @@
-<label for="select-year">Jahr</label> <!-- TODO: localize labels -->
-<f:form.select id="select-year" name="filter[date][year]"
-               options="{options.items}"
-               prependOptionLabel="Bitte wählen" value="{filter.date.year}"/>
+<html
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	data-namespace-typo3-fluid="true"
+>
 
-<label for="select-month">Monat</label> <!-- TODO: localize labels -->
-<f:form.select id="select-month" name="filter[date][month]"
-               options="{01: 1, 02:2, 03:3, 04:4, 05:5, 06:6, 07:7, 08:8, 09:9, 10:10, 11:11, 12:12}"
-               prependOptionLabel="Bitte wählen" value="{filter.date.month}"/>
+<label for="select-year">
+	<f:translate key="filter.year" extensionName="newspage" />
+</label>
+<f:form.select
+	id="select-year" name="filter[date][year]"
+ 	options="{options.items}"
+ 	prependOptionLabel="{f:translate(key: 'select.placeholder', extensionName: 'newspage')}" value="{filter.date.year}"
+/>
+
+<label for="select-month">
+	<f:translate key="filter.month" extensionName="newspage"/>
+</label>
+<f:form.select
+	id="select-month" name="filter[date][month]"
+ 	options="{01: 1, 02:2, 03:3, 04:4, 05:5, 06:6, 07:7, 08:8, 09:9, 10:10, 11:11, 12:12}"
+ 	prependOptionLabel="{f:translate(key: 'select.placeholder', extensionName: 'newspage')}" value="{filter.date.month}"
+/>
+
+</html>

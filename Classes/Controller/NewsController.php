@@ -1,35 +1,37 @@
 <?php
+declare(strict_types=1);
 
 namespace B13\Newspage\Controller;
 
+/*
+ * This file is part of TYPO3 CMS-based extension "newspage" by b13.
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ */
+
+use B13\Newspage\Domain\Repository\NewsRepository;
 use B13\Newspage\Service\FilterService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
-/**
- * Class NewsController
- * @package B13\Newspage\Controller
- */
 class NewsController extends ActionController
 {
-
     /**
      * @var array
      */
     protected $preFilters = [];
 
     /**
-     * @var \B13\Newspage\Domain\Repository\NewsRepository
+     * @var NewsRepository
      */
     protected $newsRepository;
 
-    public function injectNewsRepository(\B13\Newspage\Domain\Repository\NewsRepository $newsRepository)
+    public function injectNewsRepository(NewsRepository $newsRepository)
     {
         $this->newsRepository = $newsRepository;
     }
 
-    /**
-     * @param array $filter
-     */
     public function listAction(array $filter = []): void
     {
         foreach ($this->settings['prefilters'] as $type => $value) {
@@ -52,9 +54,6 @@ class NewsController extends ActionController
         ]);
     }
 
-    /**
-     *
-     */
     public function teaserAction(): void
     {
         $uids = explode(',', $this->settings['news']);
@@ -65,9 +64,6 @@ class NewsController extends ActionController
         $this->view->assign('news', $news);
     }
 
-    /**
-     *
-     */
     public function latestAction(): void
     {
         $settings = [
@@ -80,9 +76,6 @@ class NewsController extends ActionController
         $this->view->assign('news', $news);
     }
 
-    /**
-     * @return array
-     */
     protected function getFilterOptions(): array
     {
         $filterOptions = [];

@@ -45,5 +45,5 @@ B13\Newspage\Service\FilterService::registerFilter(
 B13\Newspage\Service\FilterService::registerFilter(
     'Categories',
     \B13\Newspage\Filter\CategoriesFilter::class,
-    'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:categories'
+    'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:filter.categories'
 );
