@@ -1,4 +1,15 @@
-<label for="select-category">Category</label> <!-- TODO: localize labels -->
-<f:form.select id="select-category" name="filter[category]"
-               options="{options.items}" optionLabelField="name" optionValueField="uid"
-               prependOptionLabel="Bitte wählen" value="{filter.category}"/>
+<html
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	data-namespace-typo3-fluid="true"
+>
+
+<label for="select-category">
+	<f:translate key="category" extensionName="newspage" />
+</label>
+<f:form.select
+	id="select-category" name="filter[category]"
+	options="{options.items}" optionLabelField="name" optionValueField="uid"
+	prependOptionLabel="{f:translate(key: 'select.placeholder', extensionName: 'newspage')}" value="{filter.category}"
+/>
+
+</html>

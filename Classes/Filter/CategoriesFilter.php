@@ -14,9 +14,8 @@ use B13\Newspage\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
 
-class CategoryFilter implements FilterInterface
+class CategoriesFilter implements FilterInterface
 {
-
     /**
      * @var \B13\Newspage\Domain\Repository\CategoryRepository
      */
@@ -34,6 +33,11 @@ class CategoryFilter implements FilterInterface
 
     public function getQueryConstraint($filter, QueryInterface $query): ConstraintInterface
     {
-        return $query->contains('categories', $filter);
+        $constraints = [];
+        foreach ($filter as $category) {
+            $constraints[] = $query->contains('categories', $category);
+        }
+
+        return $query->logicalOr(...$constraints);
     }
 }

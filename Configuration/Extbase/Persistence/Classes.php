@@ -8,8 +8,8 @@ return [
             'date' => [
                 'fieldName' => 'tx_newspage_date',
             ],
-            'category' => [
-                'fieldName' => 'tx_newspage_category',
+            'categories' => [
+                'fieldName' => 'tx_newspage_categories',
             ],
         ],
     ],

@@ -1,3 +1,8 @@
+<html
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	data-namespace-typo3-fluid="true"
+>
+
 <f:if condition="{settings.filter.show}">
 	<f:form>
 		<f:for each="{filterOptions}" key="type" as="options">
@@ -13,3 +18,5 @@
 		<f:render partial="Report" arguments="{report: report}"/>
 	</f:for>
 </f:widget.paginate>
+
+</html>

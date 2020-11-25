@@ -16,8 +16,25 @@
 			<trans-unit id="category">
 				<source>Category</source>
 			</trans-unit>
+			<trans-unit id="categories">
+				<source>Categories</source>
+			</trans-unit>
 			<trans-unit id="category.name">
 				<source>Name</source>
+			</trans-unit>
+
+			<trans-unit id="filter.month">
+				<source>Month</source>
+			</trans-unit>
+			<trans-unit id="filter.year">
+				<source>Year</source>
+			</trans-unit>
+			<trans-unit id="filter.categories">
+				<source>Multiple Categories</source>
+			</trans-unit>
+
+			<trans-unit id="select.placeholder">
+				<source>Please Choose</source>
 			</trans-unit>
 
 			<trans-unit id="list.label">

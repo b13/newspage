@@ -1,5 +1,12 @@
+<html
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	data-namespace-typo3-fluid="true"
+>
+
 <div>
 	<f:for each="{news}" as="report">
 		<f:render partial="Report" arguments="{report: report}"/>
 	</f:for>
 </div>
+
+</html>

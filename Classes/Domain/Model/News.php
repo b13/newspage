@@ -1,24 +1,50 @@
 <?php
+declare(strict_types=1);
 
 namespace B13\Newspage\Domain\Model;
 
-class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
-{
+/*
+ * This file is part of TYPO3 CMS-based extension "newspage" by b13.
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ */
 
-    /** @var string */
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
+class News extends AbstractEntity
+{
+    /**
+     * @var string
+     */
     protected $title;
 
-    /** @var \DateTime */
+    /**
+     * @var \DateTime
+     */
     protected $date;
 
-    /** @var \B13\Newspage\Domain\Model\Category */
-    protected $category;
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\B13\Newspage\Domain\Model\Category>
+     */
+    protected $categories;
 
-    /** @var string */
+    /**
+     * @var string
+     */
     protected $abstract;
 
-    /** @var \TYPO3\CMS\Extbase\Domain\Model\FileReference */
+    /**
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
     protected $media;
+
+    public function __construct()
+    {
+        $this->categories = new ObjectStorage();
+    }
 
     /**
      * @return string
@@ -47,19 +73,27 @@ class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return Category
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\B13\Newspage\Domain\Model\Category>
      */
-    public function getCategory(): ?Category
+    public function getCategories(): ObjectStorage
     {
-        return $this->category;
+        return $this->categories;
     }
 
     /**
-     * @param Category $category
+     * @return \B13\Newspage\Domain\Model\Category|null
      */
-    public function setCategory(Category $category): void
+    public function getCategory(): ?Category
     {
-        $this->category = $category;
+        return $this->categories->offsetGet(0);
+    }
+
+    /**
+     * @param ObjectStorage $category
+     */
+    public function setCategories(ObjectStorage $categories): void
+    {
+        $this->categories = $categories;
     }
 
     /**
