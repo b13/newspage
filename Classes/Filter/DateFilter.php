@@ -17,8 +17,6 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
 
 class DateFilter implements FilterInterface
 {
-
-
     public function getItems(): array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)

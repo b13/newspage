@@ -1,21 +1,21 @@
 {
-  "name": "b13/newspage",
-  "type": "typo3-cms-extension",
-  "license": "MIT",
-  "description": "Adds a new page doktype for news.",
-  "homepage": "b13.com",
-  "authors": [
-    {
-      "name": "b13",
-      "email": "info@b13.com"
+    "name": "b13/newspage",
+    "type": "typo3-cms-extension",
+    "license": "MIT",
+    "description": "Adds a new page doktype for news.",
+    "homepage": "https://b13.com",
+    "authors": [
+        {
+            "name": "b13",
+            "email": "info@b13.com"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.0 || ^9.0 || ^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "B13\\Newspage\\": "Classes"
+        }
     }
-  ],
-  "require": {
-    "typo3/cms-core": "^8.0 || ^9.0 || ^10.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "B13\\Newspage\\": "Classes"
-    }
-  }
 }

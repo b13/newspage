@@ -24,7 +24,6 @@ class PrefilterFlexform
     {
         // TODO: why is it ",newspage_list" ?
         if ($identifier['type'] === 'tca' && $identifier['tableName'] === 'tt_content' && $identifier['dataStructureKey'] === ',newspage_list') {
-
             foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'] as $type => $filter) {
                 if ($filter['flexForm'] !== '') {
                     $file = GeneralUtility::getFileAbsFileName($filter['flexForm']);
