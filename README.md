@@ -18,6 +18,8 @@ This extension registers 3 Plugins:
 
 This plugin comes with a couple of filters pre-shipped:
 - Category: both as a backend filter and front end filter
+- Categories: a front end filter that allows multiple categories to be selected
+    - this filter combines the selected filters using an **or** operation
 - Date: a front end filter that filters by year and month
 
 ### Custom Filters
@@ -50,9 +52,21 @@ The created field is automatically passed as `settings.prefilters.name` with the
 For an example take a look at `EXT:newspage/Configuration/FlexForms/Filter/Category.xml`
 
 
+## Updating to version 0.7.0
+
+Version 0.7.0 drops TYPO3 8 compatibility and introduces a breaking change: a news record can now contain more than one category.
+To allow this change the database field had to be changed both in type and name.
+
+This update also provides a migration command that can be called to update the database accordingly: `newspage:migrateCategories`
+
+When updating the following steps have to be executed;
+- a database compare and update via TYPO3 CLI or back end
+    - **Make sure not to delete/rename the old tx_newspage_category field during this step.**
+- execute the migration command via typo3-console: `bin/typo3 newspage:migrateCategories `
+- (optional, but recommended) delete the old `tx_newspage_category` field using the TYPO3 database compare tool
+
 ## ToDos
 
 - `tx_newspage_domain_model_category` should be replaced by `sys_category` as there is no real value from creating a new model for a problem that is already solved within TYPO3
-- localise all labels to German
 - make recent plugin more filterable (use added filters from list ?)
 - get away from f:widget.pagination and find a good solution for this 
