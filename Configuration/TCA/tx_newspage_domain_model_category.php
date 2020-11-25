@@ -6,7 +6,7 @@ return [
         'title' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:category',
         'label' => 'name',
         'iconfile' => 'EXT:newspage/Resources/Public/Icons/Extension.svg',
-        'sorting' => 'sorting',
+        'sortby' => 'sorting',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
