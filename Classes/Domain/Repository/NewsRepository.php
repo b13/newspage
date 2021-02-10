@@ -37,17 +37,7 @@ class NewsRepository extends Repository
     public function findLatest(array $options = []): QueryResultInterface
     {
         $query = $this->createQuery();
-        $matching = $query->getConstraint();
-        if (isset($options['filter'])) {
-            if (($category = $options['filter']['category']) > 0) {
-                $matching = $query->logicalAnd(
-                    $matching,
-                    $query->equals('tx_newspage_category', $category)
-                );
-            }
-        }
-
-        $query->matching($matching);
+        $query->matching($this->getConstraints($options['filter'], $query));
 
         if ($limit = $options['limit']) {
             $query->setLimit($limit);
