@@ -53,7 +53,8 @@ defined('TYPO3_MODE') or die('Access denied.');
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'default' => 0,
-                'foreign_table' => 'tx_newspage_domain_model_category'
+                'foreign_table' => 'tx_newspage_domain_model_category',
+                'foreign_table_where' => 'tx_newspage_domain_model_category.sys_language_uid IN (-1,0)'
             ]
         ]
     ];
