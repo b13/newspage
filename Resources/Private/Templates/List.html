@@ -12,11 +12,10 @@
 	</f:form>
 </f:if>
 
+<f:for each="{paginator.paginatedItems}" as="singleNews"  iteration="iterator">
+	<f:render partial="SingleNews" arguments="{singleNews: singleNews}" />
+</f:for>
 
-<f:widget.paginate objects="{news}" as="paginatedNews" configuration="{itemsPerPage: settings.limit, maximumNumberOfLinks: 4}">
-	<f:for each="{paginatedNews}" as="report">
-		<f:render partial="Report" arguments="{report: report}"/>
-	</f:for>
-</f:widget.paginate>
+<f:render partial="Pagination" arguments="{pagination: pagination, paginator: paginator, pages: pages, filter: filter}" />
 
 </html>
