@@ -57,7 +57,7 @@ class NewsController extends ActionController
             [
                 'news' => $news,
                 'filter' => $filter,
-                'paginator' => $pagination,
+                'paginator' => $paginator,
                 'pagination' => $pagination,
                 'pages' => range(1, $pagination->getLastPageNumber()),
             ]
