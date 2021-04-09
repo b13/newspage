@@ -65,8 +65,14 @@ When updating the following steps have to be executed;
 - execute the migration command via typo3-console: `bin/typo3 newspage:migrateCategories `
 - (optional, but recommended) delete the old `tx_newspage_category` field using the TYPO3 database compare tool
 
+## Updating to version 0.8.0
+
+Version 0.8.0 introduces the usage of the new Pagination API introduced with TYPO3 10.
+A simple example pagination template is included in the Partials folder.
+
+Updating to version 0.8.0 within a project means that the list and pagination template has to be adjusted.
+
 ## ToDos
 
 - `tx_newspage_domain_model_category` should be replaced by `sys_category` as there is no real value from creating a new model for a problem that is already solved within TYPO3
 - make recent plugin more filterable (use added filters from list ?)
-- get away from f:widget.pagination and find a good solution for this 
