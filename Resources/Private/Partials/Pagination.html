@@ -1,0 +1,43 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<nav>
+	<ul>
+		<f:if condition="{pagination.previousPageNumber}">
+			<li>
+				<f:link.action rel="prev" arguments="{filter: filter, page: pagination.previousPageNumber}">
+					&lt;
+				</f:link.action>
+			</li>
+		</f:if>
+
+		<f:for each="{pages}" as="page">
+			<f:if condition="{page} == {paginator.currentPageNumber}">
+				<f:then>
+					<li class="active">
+						<span class="disabled">{page}</span>
+					</li>
+				</f:then>
+				<f:else>
+					<li>
+						<f:link.action arguments="{filter: filter, page: page}">
+							{page}
+						</f:link.action>
+					</li>
+				</f:else>
+			</f:if>
+		</f:for>
+
+		<f:if condition="{pagination.nextPageNumber}">
+			<li>
+				<f:link.action rel="next" arguments="{filter: filter, page: pagination.nextPageNumber}">
+					&gt;
+				</f:link.action>
+			</li>
+		</f:if>
+	</ul>
+</nav>
+
+</html>

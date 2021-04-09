@@ -13,7 +13,9 @@ namespace B13\Newspage\Controller;
 
 use B13\Newspage\Domain\Repository\NewsRepository;
 use B13\Newspage\Service\FilterService;
+use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 
 class NewsController extends ActionController
 {
@@ -32,7 +34,7 @@ class NewsController extends ActionController
         $this->newsRepository = $newsRepository;
     }
 
-    public function listAction(array $filter = []): void
+    public function listAction(array $filter = [], int $page = 1): void
     {
         foreach ($this->settings['prefilters'] as $type => $value) {
             if ($value !== '') {
@@ -48,10 +50,18 @@ class NewsController extends ActionController
         if ($this->settings['filter']['show'] && $this->settings['filter']['by'] !== '') {
             $this->view->assign('filterOptions', $this->getFilterOptions());
         }
-        $this->view->assignMultiple([
-            'news' => $news,
-            'filter' => $filter
-        ]);
+
+        $paginator = new QueryResultPaginator($news, $page, (int)$this->settings['limit'] ?? 10);
+        $pagination = new SimplePagination($paginator);
+        $this->view->assignMultiple(
+            [
+                'news' => $news,
+                'filter' => $filter,
+                'paginator' => $paginator,
+                'pagination' => $pagination,
+                'pages' => range(1, $pagination->getLastPageNumber()),
+            ]
+        );
     }
 
     public function teaserAction(): void
