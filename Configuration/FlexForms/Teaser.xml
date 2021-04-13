@@ -4,7 +4,7 @@
         <el>
             <settings.news>
                 <TCEforms>
-                    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:teaser.settings.news</label>
+                    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.news</label>
                     <config>
                         <type>group</type>
                         <internal_type>db</internal_type>

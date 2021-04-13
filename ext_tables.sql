@@ -3,7 +3,7 @@
 # used for news pagetype
 #
 CREATE TABLE pages (
-	tx_newspage_date       date default null,
+	tx_newspage_date       datetime default null,
 	tx_newspage_categories varchar(50) default '' not null
 );
 
