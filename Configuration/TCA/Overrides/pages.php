@@ -18,7 +18,7 @@ defined('TYPO3_MODE') or die('Access denied.');
             ]
         ],
         'media' => [
-            'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:media.description',
+            'description' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:media.description',
             'config' => [
                 'overrideChildTca' => [
                     'columns' => [
