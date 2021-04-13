@@ -19,28 +19,28 @@ This extension registers 3 Plugins:
 This plugin comes with a couple of filters pre-shipped:
 - Category: both as a backend filter and front end filter
 - Categories: a front end filter that allows multiple categories to be selected
-    - this filter combines the selected filters using an **or** operation
+    - this filter combines the selected categories using an **or** operation
 - Date: a front end filter that filters by year and month
 
 ### Custom Filters
 
-If you want to create your own filters, you can register them in your `ext_localconf.php` with the following call 
+If you want to create your own filters, you can register them in your `ext_localconf.php` with the following call
  ```php
 <?php
 
 B13\Newspage\Service\FilterService::registerFilter(
     'Filter Name',                                                              // this name will be used to call the filter internally
-    \Vendor\Ext\Filter\ExampleFilter::class, 
-    'LLL:EXT:vendor/ext/Private/Language/newspage.xlf:filter.name',             // label to use for the plugin and frontend filter 
+    \Vendor\Ext\Filter\ExampleFilter::class,
+    'LLL:EXT:vendor/ext/Private/Language/newspage.xlf:filter.name',             // label to use for the plugin and frontend filter
     'EXT:site_tecselect/Configuration/FlexForms/Newspage/Filter/Partner.xml'    // optional flexform definition for a backend filter
 );
-``` 
+```
 
 Your class should implement the `B13\Newspage\Filter\FilterInterface` and therefore implement the functions `getItems()` and `getQueryConstraint()`.
 
 The function `getItems()` is used to get all possible values for the filter (both for the plugin settings, as well as the frontend filter).
 
-`getQueryContraint()` is used to add the filtering restriction to the query in the `list` plugin. This function can also return `null` if not all required values are set, or you want to filter everything in the front end using JavaScript.  
+`getQueryContraint()` is used to add the filtering restriction to the query in the `list` plugin. This function can also return `null` if not all required values are set, or you want to filter everything in the front end using JavaScript.
 
 For an example take a look at the two filters provided by this extension.
 
@@ -50,27 +50,6 @@ This file then needs to be passed as the fourth argument when registering the fi
 The created field is automatically passed as `settings.prefilters.name` with the name you registered it with.
 
 For an example take a look at `EXT:newspage/Configuration/FlexForms/Filter/Category.xml`
-
-
-## Updating to version 0.7.0
-
-Version 0.7.0 drops TYPO3 8 compatibility and introduces a breaking change: a news record can now contain more than one category.
-To allow this change the database field had to be changed both in type and name.
-
-This update also provides a migration command that can be called to update the database accordingly: `newspage:migrateCategories`
-
-When updating the following steps have to be executed;
-- a database compare and update via TYPO3 CLI or back end
-    - **Make sure not to delete/rename the old tx_newspage_category field during this step.**
-- execute the migration command via typo3-console: `bin/typo3 newspage:migrateCategories `
-- (optional, but recommended) delete the old `tx_newspage_category` field using the TYPO3 database compare tool
-
-## Updating to version 0.8.0
-
-Version 0.8.0 introduces the usage of the new Pagination API introduced with TYPO3 10.
-A simple example pagination template is included in the Partials folder.
-
-Updating to version 0.8.0 within a project means that the list and pagination template has to be adjusted.
 
 ## ToDos
 
