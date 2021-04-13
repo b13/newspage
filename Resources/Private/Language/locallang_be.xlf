@@ -23,6 +23,10 @@
 				<source>Name</source>
 			</trans-unit>
 
+			<trans-unit id="media.description">
+				<source>The first visible image will be used for all teasers.</source>
+			</trans-unit>
+
 			<trans-unit id="filter.month">
 				<source>Month</source>
 			</trans-unit>

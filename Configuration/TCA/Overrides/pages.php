@@ -18,8 +18,8 @@ defined('TYPO3_MODE') or die('Access denied.');
             ]
         ],
         'media' => [
+            'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:media.description',
             'config' => [
-                'maxitems' => 1,
                 'overrideChildTca' => [
                     'columns' => [
                         'uid_local' => [
