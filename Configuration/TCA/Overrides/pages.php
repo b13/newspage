@@ -42,8 +42,8 @@ defined('TYPO3_MODE') or die('Access denied.');
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
-                'dbType' => 'date',
-                'eval' => 'date,required'
+                'dbType' => 'datetime',
+                'eval' => 'datetime,required'
             ]
         ],
         'tx_newspage_categories' => [
