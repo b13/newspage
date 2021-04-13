@@ -66,8 +66,8 @@
 			</trans-unit>
 
 			<trans-unit id="settings.news">
-				<source>News report to be shown</source>
-				<target>Nachricht die gezeigt werden soll</target>
+				<source>News report(s) to be shown</source>
+				<target>Nachricht(en) die gezeigt werden soll(en)</target>
 			</trans-unit>
 			<trans-unit id="settings.limit.latest">
 				<source>Maximum number of latest news to show</source>
