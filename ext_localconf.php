@@ -7,25 +7,25 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Configuration\FlexForm
     = \B13\Newspage\Hooks\PrefilterFlexform::class;
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'B13.Newspage',
+    'Newspage',
     'List',
-    ['News' => 'list'],
-    ['News' => 'list'],
+    [\B13\Newspage\Controller\NewsController::class => 'list'],
+    [\B13\Newspage\Controller\NewsController::class => 'list'],
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'B13.Newspage',
+    'Newspage',
     'Latest',
-    ['News' => 'latest'],
+    [\B13\Newspage\Controller\NewsController::class => 'latest'],
     [],
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'B13.Newspage',
+    'Newspage',
     'Teaser',
-    ['News' => 'teaser'],
+    [\B13\Newspage\Controller\NewsController::class => 'teaser'],
     [],
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
