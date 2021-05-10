@@ -2,7 +2,7 @@
 defined('TYPO3_MODE') or die('Access denied.');
 
 (function(){
-    $ext = 'B13.Newspage';
+    $ext = 'Newspage';
     $locallang = 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf';
     $flexformPath = 'FILE:EXT:newspage/Configuration/FlexForms/';
 
