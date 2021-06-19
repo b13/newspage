@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 283.5 283.5" style="enable-background:new 0 0 283.5 283.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EFEFEF;}
+	.st1{opacity:0.65;fill:#FFFFFF;enable-background:new;}
+	.st2{fill:#B9B9B9;}
+	.st3{fill:#666666;}
+	.st4{fill:#999999;}
+	.st5{fill:#5599FF;}
+	.st6{fill:#F16529;}
+	.st7{fill:#FFFFFF;}
+	.st8{fill:#663399;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M17.5,17.7v248h186v-186l-62-62H17.5z"/>
+		<path class="st1" d="M141.5,79.4V17.7l62,62L141.5,79.4z"/>
+		<path class="st2" d="M188,95.2v77.5l-62-77.5H188z"/>
+		<path class="st3" d="M58,58.2h68V72H58V58.2z"/>
+		<path class="st2" d="M58,211.4h105v13.8H58V211.4z"/>
+		<path class="st2" d="M58,180.7h105v13.8H58V180.7z"/>
+		<path class="st2" d="M58,150.1h105v13.8H58V150.1z"/>
+		<path class="st2" d="M58,119.5h105v13.8H58V119.5z"/>
+		<path class="st2" d="M58,88.8h105v13.8H58V88.8z"/>
+		<path class="st4" d="M17.5,17.7v248h186v-186h-0.2l0.1-0.1l-61.8-61.8l-0.1,0.1v-0.2H17.5z M33,33.2h93v62h62v155H33V33.2z
+			 M141.5,39.6l40.1,40.1h-40.1V39.6z"/>
+	</g>
+	<path d="M255.1,234.6l-47.8-107.9v-0.2H163v15.6h17.2l-41,92.5H126v15.6h44.3v-15.6h-14l9.8-22.1H211l9.8,22.1h-9.6v15.6h54.2
+		v-15.6H255.1z M173,196.8l15.5-35l15.5,35H173z"/>
+	<polygon class="st7" points="204.1,196.8 188.6,161.8 173,196.8 	"/>
+</g>
+</svg>

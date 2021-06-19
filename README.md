@@ -51,6 +51,21 @@ The created field is automatically passed as `settings.prefilters.name` with the
 
 For an example take a look at `EXT:newspage/Configuration/FlexForms/Filter/Category.xml`
 
+## Assets
+
+At b13 we often use additional page types (doktype) for categories, overview pages, and tags. This extension adds a 
+number of assets ready to use for your own custom doktypes:
+
+|Icon Identifier|Icon|
+|---------------|----|
+|apps-pagetree-newspage-page|<img src="Resources/Public/Icons/apps-pagetree-newspage-page.svg" style="width: 40px; height: 40px;"/>|
+|apps-pagetree-newspage-article|<img src="Resources/Public/Icons/apps-pagetree-newspage-article.svg" style="width: 40px; height: 40px;"/>|
+|apps-pagetree-newspage-category|<img src="Resources/Public/Icons/apps-pagetree-newspage-category.svg" style="width: 40px; height: 40px;"/>|
+|apps-pagetree-newspage-overview|<img src="Resources/Public/Icons/apps-pagetree-newspage-overview.svg" style="width: 40px; height: 40px;"/>|
+|apps-pagetree-newspage-tag|<img src="Resources/Public/Icons/apps-pagetree-newspage-tag.svg" style="width: 40px; height: 40px;"/>|
+|mimetypes-newspage-page|<img src="Resources/Public/Icons/mimetypes-newspage-page.svg" style="width: 40px; height: 40px;"/>|
+
+
 ## ToDos
 
 - `tx_newspage_domain_model_category` should be replaced by `sys_category` as there is no real value from creating a new model for a problem that is already solved within TYPO3

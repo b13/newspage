@@ -8,6 +8,9 @@ defined('TYPO3_MODE') or die('Access denied.');
     // adding the new doktypes to the type select
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('pages', 'doktype', $newsType);
 
+    $GLOBALS['TCA']['pages']['ctrl']['typsicon_classes'][$dokType] = 'apps-pagetree-newspage-page';
+    $GLOBALS['TCA']['pages']['ctrl']['typsicon_classes'][$dokType . '-hideinmenu'] = 'apps-pagetree-newspage-page-hideinmenu';
+
     $GLOBALS['TCA']['pages']['types'][$dokType]['showitem'] = str_replace('abstract,', '', $GLOBALS['TCA']['pages']['types'][1]['showitem']);
 
     // make title required for news and allow only one image in the media field to be used as the teaser image
@@ -72,6 +75,6 @@ defined('TYPO3_MODE') or die('Access denied.');
         'pages',
         '--palette--;LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news;tx_newspage,',
         $dokType,
-        'after:title'
+        'after:title',
     );
 })();
