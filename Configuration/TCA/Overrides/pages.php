@@ -75,6 +75,6 @@ defined('TYPO3_MODE') or die('Access denied.');
         'pages',
         '--palette--;LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news;tx_newspage,',
         $dokType,
-        'after:title',
+        'after:title'
     );
 })();
