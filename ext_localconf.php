@@ -68,7 +68,7 @@ defined('TYPO3_MODE') or die('Access denied.');
             $iconRegistry->registerIcon(
                 $identifier,
                 \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                ['source' => 'EXT:newspage/Resources/Public/Icons/' . $path]
+                ['source' => 'EXT:newspage/Resources/Public/Icons/' . $path . 'svg']
             );
         }
     }
