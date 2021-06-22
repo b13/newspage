@@ -1,36 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 25.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 283.5 283.5" style="enable-background:new 0 0 283.5 283.5;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#EFEFEF;}
-	.st1{opacity:0.65;fill:#FFFFFF;enable-background:new;}
-	.st2{fill:#B9B9B9;}
-	.st3{fill:#666666;}
-	.st4{fill:#999999;}
-	.st5{fill:#5599FF;}
-	.st6{fill:#F16529;}
-	.st7{fill:#FFFFFF;}
-	.st8{fill:#663399;}
-</style>
-<g>
-	<g>
-		<path class="st0" d="M17.5,17.7v248h186v-186l-62-62H17.5z"/>
-		<path class="st1" d="M141.5,79.4V17.7l62,62L141.5,79.4z"/>
-		<path class="st2" d="M188,95.2v77.5l-62-77.5H188z"/>
-		<path class="st3" d="M58,58.2h68V72H58V58.2z"/>
-		<path class="st2" d="M58,211.4h105v13.8H58V211.4z"/>
-		<path class="st2" d="M58,180.7h105v13.8H58V180.7z"/>
-		<path class="st2" d="M58,150.1h105v13.8H58V150.1z"/>
-		<path class="st2" d="M58,119.5h105v13.8H58V119.5z"/>
-		<path class="st2" d="M58,88.8h105v13.8H58V88.8z"/>
-		<path class="st4" d="M17.5,17.7v248h186v-186h-0.2l0.1-0.1l-61.8-61.8l-0.1,0.1v-0.2H17.5z M33,33.2h93v62h62v155H33V33.2z
-			 M141.5,39.6l40.1,40.1h-40.1V39.6z"/>
-	</g>
-	<g>
-		<circle class="st6" cx="233.8" cy="218.8" r="31.4"/>
-		<rect x="126.3" y="188.5" class="st6" width="61.7" height="61.7"/>
-		<path class="st6" d="M153.4,174.2l44-57l44,57H153.4z"/>
-	</g>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M1,1V15H11.52V4.49L8,1Z" style="fill:#efefef"/>
+    <path d="M8,4.47V1l3.51,3.52Z" style="fill:#fff;isolation:isolate;opacity:0.6499999761581421"/>
+    <path d="M10.64,5.36v4.4L7.13,5.36Z" style="fill:#b9b9b9"/>
+    <path d="M3.28,3.27H7.13v.78H3.28Z" style="fill:#666"/>
+    <path d="M3.28,12h6v.78h-6Z" style="fill:#b9b9b9"/>
+    <path d="M3.28,10.21h6V11h-6Z" style="fill:#b9b9b9"/>
+    <path d="M3.28,8.48h6v.78h-6Z" style="fill:#b9b9b9"/>
+    <path d="M3.28,6.74h6v.78h-6Z" style="fill:#b9b9b9"/>
+    <path d="M3.28,5h6v.78h-6Z" style="fill:#b9b9b9"/>
+    <path d="M1,1V15H11.52V4.49h0L8,1H1Zm.88.88H7.13V5.36h3.51v8.79H1.86ZM8,2.21l2.27,2.28H8Z" style="fill:#999"/>
+    <circle cx="13.24" cy="12.37" r="1.78" style="fill:#f16529"/>
+    <rect x="7.15" y="10.65" width="3.5" height="3.5" style="fill:#f16529"/>
+    <path d="M8.68,9.84l2.5-3.23,2.49,3.23Z" style="fill:#f16529"/>
 </svg>

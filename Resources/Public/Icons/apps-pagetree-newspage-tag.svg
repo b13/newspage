@@ -1,32 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 283.5 283.5" style="enable-background:new 0 0 283.5 283.5;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#EFEFEF;}
-	.st1{opacity:0.65;fill:#FFFFFF;enable-background:new;}
-	.st2{fill:#B9B9B9;}
-	.st3{fill:#666666;}
-	.st4{fill:#999999;}
-	.st5{fill:#5599FF;}
-	.st6{fill:#F16529;}
-	.st7{fill:#FFFFFF;}
-	.st8{fill:#663399;}
-</style>
-<g>
-	<g>
-		<path class="st0" d="M17.5,17.7v248h186v-186l-62-62H17.5z"/>
-		<path class="st1" d="M141.5,79.4V17.7l62,62L141.5,79.4z"/>
-		<path class="st2" d="M188,95.2v77.5l-62-77.5H188z"/>
-		<path class="st3" d="M58,58.2h68V72H58V58.2z"/>
-		<path class="st2" d="M58,211.4h105v13.8H58V211.4z"/>
-		<path class="st2" d="M58,180.7h105v13.8H58V180.7z"/>
-		<path class="st2" d="M58,150.1h105v13.8H58V150.1z"/>
-		<path class="st2" d="M58,119.5h105v13.8H58V119.5z"/>
-		<path class="st2" d="M58,88.8h105v13.8H58V88.8z"/>
-		<path class="st4" d="M17.5,17.7v248h186v-186h-0.2l0.1-0.1l-61.8-61.8l-0.1,0.1v-0.2H17.5z M33,33.2h93v62h62v155H33V33.2z
-			 M141.5,39.6l40.1,40.1h-40.1V39.6z"/>
-	</g>
-	<path class="st5" d="M259.3,132.7l-42.8-6.2l-74.7,74.7l49,49l74.7-74.7L259.3,132.7z M186,217.5c-3.2,3.2-8.4,3.2-11.5,0
-		c-3.2-3.2-3.2-8.4,0-11.5c3.2-3.2,8.4-3.2,11.5,0C189.2,209.1,189.2,214.3,186,217.5z"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M1,1V15H11.5V4.47L8,1Z" style="fill:#efefef"/>
+    <path d="M8,4.45V1l3.5,3.5Z" style="fill:#fff;isolation:isolate;opacity:0.6499999761581421"/>
+    <path d="M10.62,5.35V9.72L7.12,5.35Z" style="fill:#b9b9b9"/>
+    <path d="M3.29,3.26H7.12V4H3.29Z" style="fill:#666"/>
+    <path d="M3.29,11.91H9.21v.78H3.29Z" style="fill:#b9b9b9"/>
+    <path d="M3.29,10.17H9.21V11H3.29Z" style="fill:#b9b9b9"/>
+    <path d="M3.29,8.45H9.21v.78H3.29Z" style="fill:#b9b9b9"/>
+    <path d="M3.29,6.72H9.21V7.5H3.29Z" style="fill:#b9b9b9"/>
+    <path d="M3.29,5H9.21v.77H3.29Z" style="fill:#b9b9b9"/>
+    <path d="M1,1V15H11.5V4.47h0L8,1H1Zm.88.88H7.12v3.5h3.5V14.1H1.88ZM8,2.21l2.26,2.26H8Z" style="fill:#999"/>
+    <path d="M14.65,7.46l-2.42-.35L8,11.33l2.76,2.77L15,9.88Zm-4.14,4.79a.46.46,0,1,1,0-.65A.46.46,0,0,1,10.51,12.25Z"
+          style="fill:#59f"/>
 </svg>

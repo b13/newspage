@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 283.5 283.5" style="enable-background:new 0 0 283.5 283.5;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#EFEFEF;}
-	.st1{opacity:0.65;fill:#FFFFFF;enable-background:new;}
-	.st2{fill:#B9B9B9;}
-	.st3{fill:#666666;}
-	.st4{fill:#999999;}
-	.st5{fill:#5599FF;}
-	.st6{fill:#F16529;}
-	.st7{fill:#FFFFFF;}
-	.st8{fill:#663399;}
+	.st0{opacity:0.5;}
+	.st1{fill:#EFEFEF;}
+	.st2{opacity:0.65;fill:#FFFFFF;enable-background:new;}
+	.st3{fill:#B9B9B9;}
+	.st4{fill:#666666;}
+	.st5{fill:#999999;}
+	.st6{fill:#5599FF;}
 </style>
-<g opacity=".5">
-	<g>
-		<path class="st0" d="M17.5,17.7v248h186v-186l-62-62H17.5z"/>
-		<path class="st1" d="M141.5,79.4V17.7l62,62L141.5,79.4z"/>
-		<path class="st2" d="M188,95.2v77.5l-62-77.5H188z"/>
-		<path class="st3" d="M58,58.2h68V72H58V58.2z"/>
-		<path class="st2" d="M58,211.4h105v13.8H58V211.4z"/>
-		<path class="st2" d="M58,180.7h105v13.8H58V180.7z"/>
-		<path class="st2" d="M58,150.1h105v13.8H58V150.1z"/>
-		<path class="st2" d="M58,119.5h105v13.8H58V119.5z"/>
-		<path class="st2" d="M58,88.8h105v13.8H58V88.8z"/>
-		<path class="st4" d="M17.5,17.7v248h186v-186h-0.2l0.1-0.1l-61.8-61.8l-0.1,0.1v-0.2H17.5z M33,33.2h93v62h62v155H33V33.2z
-			 M141.5,39.6l40.1,40.1h-40.1V39.6z"/>
-	</g>
-	<path class="st5" d="M259.3,132.7l-42.8-6.2l-74.7,74.7l49,49l74.7-74.7L259.3,132.7z M186,217.5c-3.2,3.2-8.4,3.2-11.5,0
-		c-3.2-3.2-3.2-8.4,0-11.5c3.2-3.2,8.4-3.2,11.5,0C189.2,209.1,189.2,214.3,186,217.5z"/>
+<g class="st0">
+	<path class="st1" d="M1,1v14h10.5V4.5L8,1H1z"/>
+	<path class="st2" d="M8,4.4V1l3.5,3.5L8,4.4z"/>
+	<path class="st3" d="M10.6,5.3v4.4L7.1,5.3H10.6z"/>
+	<path class="st4" d="M3.3,3.3h3.8V4H3.3V3.3z"/>
+	<path class="st3" d="M3.3,11.9h5.9v0.8H3.3V11.9z"/>
+	<path class="st3" d="M3.3,10.2h5.9V11H3.3V10.2z"/>
+	<path class="st3" d="M3.3,8.4h5.9v0.8H3.3V8.4z"/>
+	<path class="st3" d="M3.3,6.7h5.9v0.8H3.3V6.7z"/>
+	<path class="st3" d="M3.3,5h5.9v0.8H3.3V5z"/>
+	<path class="st5" d="M1,1v14h10.5V4.5l0,0L8,1H1z M1.9,1.9h5.2v3.5h3.5v8.7H1.9V1.9z M8,2.2l2.3,2.3H8V2.2z"/>
+	<path class="st6" d="M14.6,7.5l-2.4-0.3L8,11.3l2.8,2.8L15,9.9L14.6,7.5z M10.5,12.2c-0.2,0.2-0.5,0.2-0.7,0
+		c-0.2-0.2-0.2-0.5,0-0.7c0.2-0.2,0.5-0.2,0.7,0c0,0,0,0,0,0C10.7,11.8,10.7,12.1,10.5,12.2z"/>
 </g>
 </svg>
