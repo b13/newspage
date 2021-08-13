@@ -61,7 +61,11 @@ defined('TYPO3_MODE') or die('Access denied.');
         'apps-pagetree-newspage-tag' => 'apps-pagetree-newspage-tag',
         'apps-pagetree-newspage-tag-hideinmenu' => 'apps-pagetree-newspage-tag-hideinmenu',
         'mimetypes-newspage' => 'mimetypes-newspage',
-        'apps-pagetree-folder-newspages' => 'apps-pagetree-folder-newspages'
+        'apps-pagetree-folder-newspages' => 'apps-pagetree-folder-newspages',
+        'content-newspage' => 'content-newspage',
+        'content-newspage-category' => 'content-newspage-category',
+        'content-newspage-overview' => 'content-newspage-overview',
+        'content-newspage-tag' => 'content-newspage-tag'
     ];
     $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
     foreach ($icons as $identifier => $path) {

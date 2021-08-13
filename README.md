@@ -63,7 +63,12 @@ number of assets ready to use for your own custom doktypes:
 |apps-pagetree-newspage-category|<img src="Resources/Public/Icons/apps-pagetree-newspage-category.svg" style="width: 40px; height: 40px;"/>|
 |apps-pagetree-newspage-overview|<img src="Resources/Public/Icons/apps-pagetree-newspage-overview.svg" style="width: 40px; height: 40px;"/>|
 |apps-pagetree-newspage-tag|<img src="Resources/Public/Icons/apps-pagetree-newspage-tag.svg" style="width: 40px; height: 40px;"/>|
+|apps-pagetree-folder-newspages|<img src="Resources/Public/Icons/apps-pagetree-folder-newspages.svg" style="width: 40px; height: 40px;"/>|
 |mimetypes-newspage-page|<img src="Resources/Public/Icons/mimetypes-newspage-page.svg" style="width: 40px; height: 40px;"/>|
+|content-newspage|<img src="Resources/Public/Icons/content-newspage.svg" style="width: 40px; height: 40px;"/>|
+|content-newspage-category|<img src="Resources/Public/Icons/content-newspage-category.svg" style="width: 40px; height: 40px;"/>|
+|content-newspage-overview|<img src="Resources/Public/Icons/content-newspage-overview.svg" style="width: 40px; height: 40px;"/>|
+|content-newspage-tag|<img src="Resources/Public/Icons/content-newspage-tag.svg" style="width: 40px; height: 40px;"/>|
 
 
 ## ToDos
