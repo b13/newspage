@@ -3,7 +3,7 @@ defined('TYPO3_MODE') or die('Access denied.');
 
 (function () {
     $dokType = 24;
-    $newsType = ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news', $dokType];
+    $newsType = ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news', (string)$dokType];
 
     // adding the new doktypes to the type select
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('pages', 'doktype', $newsType);
