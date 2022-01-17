@@ -2,7 +2,7 @@
 defined('TYPO3_MODE') or die('Access denied.');
 
 (function () {
-    $dokType = 24;
+    $dokType = '24';
     $newsType = ['LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news', $dokType];
 
     // adding the new doktypes to the type select
