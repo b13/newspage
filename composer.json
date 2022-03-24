@@ -5,7 +5,7 @@
     "description": "Adds a new page doktype for news.",
     "homepage": "https://b13.com",
     "require": {
-        "typo3/cms-core": "^10.0"
+        "typo3/cms-core": "^10.0 || ^11.5"
     },
     "autoload": {
         "psr-4": {
