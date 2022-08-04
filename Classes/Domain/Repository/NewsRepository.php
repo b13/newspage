@@ -39,11 +39,11 @@ class NewsRepository extends Repository
         $query = $this->createQuery();
         $query->matching($this->getConstraints($options['filter'], $query));
 
-        if ($limit = $options['limit']) {
+        if ($limit = ($options['limit'] ?? false)) {
             $query->setLimit($limit);
         }
 
-        if ($offset = $options['offset']) {
+        if ($offset = ($options['offset'] ?? false)) {
             $query->setOffset($offset);
         }
 
@@ -55,11 +55,11 @@ class NewsRepository extends Repository
         $query = $this->createQuery();
         $query->matching($this->getConstraints($options['filter'], $query));
 
-        if ($limit = $options['limit']) {
+        if ($limit = ($options['limit'] ?? false)) {
             $query->setLimit($limit);
         }
 
-        if ($offset = $options['offset']) {
+        if ($offset = ($options['offset'] ?? false)) {
             $query->setOffset($offset);
         }
 
