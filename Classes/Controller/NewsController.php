@@ -14,6 +14,7 @@ namespace B13\Newspage\Controller;
 use B13\Newspage\Domain\Repository\NewsRepository;
 use B13\Newspage\Service\FilterService;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 
@@ -66,10 +67,10 @@ class NewsController extends ActionController
 
     public function teaserAction(): void
     {
-        $uids = explode(',', $this->settings['news']);
+        $uids = GeneralUtility::intExplode(',', $this->settings['news'] ?? '', true);
         $news = [];
         foreach ($uids as $uid) {
-            $news[] = $this->newsRepository->findByUid((int)$uid);
+            $news[] = $this->newsRepository->findByUid($uid);
         }
         $this->view->assign('news', $news);
     }
