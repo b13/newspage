@@ -85,7 +85,10 @@ class News extends AbstractEntity
      */
     public function getCategory(): ?Category
     {
-        return $this->categories->offsetGet(0);
+        if ($this->categories->count() > 0) {
+            return $this->categories->offsetGet(0);
+        }
+        return null;
     }
 
     /**
