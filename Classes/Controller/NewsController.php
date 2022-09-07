@@ -48,11 +48,11 @@ class NewsController extends ActionController
 
         $news = $this->newsRepository->findFiltered($options);
 
-        if ($this->settings['filter']['show'] && $this->settings['filter']['by'] !== '') {
+        if (($this->settings['filter']['show'] ?? false) && ($this->settings['filter']['by'] ?? '') !== '') {
             $this->view->assign('filterOptions', $this->getFilterOptions());
         }
 
-        $paginator = new QueryResultPaginator($news, $page, (int)$this->settings['limit'] ?? 10);
+        $paginator = new QueryResultPaginator($news, $page, (int)($this->settings['limit'] ?? 10));
         $pagination = new SimplePagination($paginator);
         $this->view->assignMultiple(
             [
@@ -78,9 +78,9 @@ class NewsController extends ActionController
     public function latestAction(): void
     {
         $settings = [
-            'limit' => (int)$this->settings['limit'],
+            'limit' => (int)($this->settings['limit'] ?? 0),
             'filter' => [
-                'category' => (int)$this->settings['category']
+                'category' => (int)($this->settings['category'] ?? 0)
             ]
         ];
         $news = $this->newsRepository->findLatest($settings);
@@ -90,7 +90,7 @@ class NewsController extends ActionController
     protected function getFilterOptions(): array
     {
         $filterOptions = [];
-        foreach (explode(',', $this->settings['filter']['by']) as $filter) {
+        foreach (explode(',', $this->settings['filter']['by'] ?? []) as $filter) {
             if (!in_array(strtolower($filter), $this->preFilters)) {
                 $filterOptions[$filter]['items'] = FilterService::getFilterOptionsForFluid($filter);
             }
