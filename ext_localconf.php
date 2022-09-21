@@ -31,6 +31,12 @@ defined('TYPO3_MODE') or die('Access denied.');
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
 
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'Newspage',
+        'Json',
+        [\B13\Newspage\Controller\JsonController::class => 'getNews']
+    );
+
 
     B13\Newspage\Service\FilterService::registerFilter(
         'Date',

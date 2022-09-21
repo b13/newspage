@@ -1,12 +1,30 @@
-config.tx_extbase.persistence.classes {
-    B13\Newspage\Domain\Model\News {
-        mapping {
-            tableName = pages
-            columns {
-                tx_newspage_date.mapOnProperty = date
-                tx_newspage_categories.mapOnProperty = categories
-            }
-        }
+news_json = PAGE
+news_json {
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders {
+      10 {
+        header = Content-Type: application/json
+        replace = 1
+      }
     }
+  }
+
+  typeNum = 1623330999
+
+  10 < tt_content.list.20.newspage_json
 }
 
+plugin.tx_newspage_json {
+  # set this to your storagePid
+  persistence.storagePid = 0
+  settings {
+    processingInstructions {
+
+      # these instructions for generating the processed teaser images are handled similarly to the f:image view helper
+      width = 500c
+      height = 300c
+      cropVariant = default
+    }
+  }
+}
