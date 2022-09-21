@@ -14,10 +14,10 @@ namespace B13\Newspage\Controller;
 use B13\Newspage\Domain\DTO\JsonNews;
 use B13\Newspage\Domain\Model\News;
 use B13\Newspage\Domain\Repository\NewsRepository;
+use B13\Newspage\Mvc\View\JsonView;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Mvc\View\JsonView;
 use TYPO3\CMS\Extbase\Service\ImageService;
 
 class JsonController extends ActionController
