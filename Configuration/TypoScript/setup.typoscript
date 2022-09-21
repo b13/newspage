@@ -12,7 +12,7 @@ news_json {
 
   typeNum = 1623330999
 
-  10 < tt_content.list.20.newspage_json
+  10 =< tt_content.list.20.newspage_json
 }
 
 plugin.tx_newspage_json {
@@ -28,3 +28,4 @@ plugin.tx_newspage_json {
     }
   }
 }
+
