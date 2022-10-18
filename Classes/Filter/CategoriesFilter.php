@@ -16,12 +16,9 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
 
 class CategoriesFilter implements FilterInterface
 {
-    /**
-     * @var \B13\Newspage\Domain\Repository\CategoryRepository
-     */
-    protected $categoryRepository;
+    protected CategoryRepository $categoryRepository;
 
-    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
+    public function __construct(CategoryRepository $categoryRepository)
     {
         $this->categoryRepository = $categoryRepository;
     }

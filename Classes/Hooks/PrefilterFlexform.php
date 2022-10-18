@@ -14,12 +14,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class PrefilterFlexform
 {
-
-    /**
-     * @param array $dataStructure
-     * @param array $identifier
-     * @return array
-     */
     public function parseDataStructureByIdentifierPostProcess(array $dataStructure, array $identifier): array
     {
         // TODO: why is it ",newspage_list" ?

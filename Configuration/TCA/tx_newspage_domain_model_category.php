@@ -12,9 +12,6 @@ return [
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource' => 'l10n_source',
     ],
-    'interface' => [
-        'showRecordFieldList' => 'name'
-    ],
     'columns' => [
         'name' => [
             'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:category.name',

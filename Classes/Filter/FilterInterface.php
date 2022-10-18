@@ -17,5 +17,6 @@ interface FilterInterface
 {
     public function getItems(): array;
 
+    // TODO: check $filter type
     public function getQueryConstraint($filter, QueryInterface $query): ?ConstraintInterface;
 }

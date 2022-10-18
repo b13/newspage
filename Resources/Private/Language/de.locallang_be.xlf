@@ -26,6 +26,7 @@
 			</trans-unit>
 			<trans-unit id="category.name">
 				<source>Name</source>
+				<target>Name</target>
 			</trans-unit>
 
 			<trans-unit id="media.description">
@@ -102,9 +103,11 @@
 			</trans-unit>
 			<trans-unit id="settings.tab.preFilters">
 				<source>Filter</source>
+				<target>Filter</target>
 			</trans-unit>
 			<trans-unit id="settings.tab.filter">
 				<source>Frontend Filter</source>
+				<target>Frontend Filter</target>
 			</trans-unit>
 
 			<trans-unit id="select.placeholder">
@@ -118,6 +121,7 @@
 
 			<trans-unit id="newContentWizard.header">
 				<source>News</source>
+				<target>News</target>
 			</trans-unit>
 
 			<trans-unit id="newContentWizard.list.title">

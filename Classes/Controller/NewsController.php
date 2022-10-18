@@ -20,17 +20,10 @@ use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 
 class NewsController extends ActionController
 {
-    /**
-     * @var array
-     */
-    protected $preFilters = [];
+    protected NewsRepository $newsRepository;
+    protected array $preFilters = [];
 
-    /**
-     * @var NewsRepository
-     */
-    protected $newsRepository;
-
-    public function injectNewsRepository(NewsRepository $newsRepository)
+    public function __construct(NewsRepository $newsRepository)
     {
         $this->newsRepository = $newsRepository;
     }
