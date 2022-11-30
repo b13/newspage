@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  B13\Newspage\:
+    resource: '../Classes/*'
+
+  B13\Newspage\EventListener\SimplePaginationProvider:
+    tags:
+      - name: event.listener
+        identifier: 'ext-newspage-simplePaginationProvider'
+        event: B13\Newspage\Event\CreatingPaginationEvent

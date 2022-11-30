@@ -12,6 +12,7 @@ namespace B13\Newspage\Controller;
  */
 
 use B13\Newspage\Domain\Repository\NewsRepository;
+use B13\Newspage\Event\CreatingPaginationEvent;
 use B13\Newspage\Service\FilterService;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -46,7 +47,10 @@ class NewsController extends ActionController
         }
 
         $paginator = new QueryResultPaginator($news, $page, (int)($this->settings['limit'] ?? 10));
-        $pagination = new SimplePagination($paginator);
+        $event = $this->eventDispatcher->dispatch(
+            new CreatingPaginationEvent($paginator)
+        );
+        $pagination = $event->getPagination();
         $this->view->assignMultiple(
             [
                 'news' => $news,
