@@ -17,19 +17,25 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class News extends AbstractEntity
 {
-    protected string $title;
-    protected DateTime $date;
-    protected string $abstract;
-    protected FileReference $media;
+    protected string $title = '';
+    /** @var \DateTime  */
+    protected $date;
+    protected string $abstract = '';
+    /** @var FileReference  */
+    protected $media;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\B13\Newspage\Domain\Model\Category>
      */
     protected ObjectStorage $categories;
 
-    public function __construct()
+    public function __construct(string $title, \DateTime $date, string $abstract, FileReference $media, ObjectStorage $categories)
     {
-        $this->categories = new ObjectStorage();
+        $this->title = $title;
+        $this->date = $date;
+        $this->abstract = $abstract;
+        $this->media = $media;
+        $this->categories = $categories;
     }
 
     public function getTitle(): string
