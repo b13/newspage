@@ -27,7 +27,7 @@ class News extends AbstractEntity
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\B13\Newspage\Domain\Model\Category>
      */
-    protected ObjectStorage $categories;
+    protected $categories;
 
     public function __construct(string $title, \DateTime $date, string $abstract, FileReference $media, ObjectStorage $categories)
     {
