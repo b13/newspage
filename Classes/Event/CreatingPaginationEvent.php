@@ -11,7 +11,7 @@ use TYPO3\CMS\Core\Pagination\PaginatorInterface;
 final class CreatingPaginationEvent implements StoppableEventInterface
 {
     private PaginatorInterface $paginator;
-    private PaginationInterface $pagination;
+    private ?PaginationInterface $pagination = null;
 
     public function __construct(PaginatorInterface $paginator)
     {
@@ -23,7 +23,7 @@ final class CreatingPaginationEvent implements StoppableEventInterface
         return $this->paginator;
     }
 
-    public function getPagination(): PaginationInterface
+    public function getPagination(): ?PaginationInterface
     {
         return $this->pagination;
     }
@@ -35,6 +35,6 @@ final class CreatingPaginationEvent implements StoppableEventInterface
 
     public function isPropagationStopped(): bool
     {
-        return isset($this->pagination);
+        return $this->pagination instanceof PaginationInterface;
     }
 }

@@ -49,7 +49,8 @@ defined('TYPO3_MODE') or die('Access denied.');
         'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:filter.categories'
     );
 
-    if (version_compare(TYPO3_version, '11.0.0', '<')) {
+    $typo3Version = new \TYPO3\CMS\Core\Information\Typo3Version();
+    if (version_compare($typo3Version->getVersion(), '11.0.0', '<')) {
         $icons = [
             'apps-pagetree-newspage-page' => 'apps-pagetree-newspage-page',
             'apps-pagetree-newspage-page-hideinmenu' => 'apps-pagetree-newspage-page-hideinmenu',

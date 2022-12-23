@@ -49,7 +49,7 @@ class NewsController extends ActionController
         $event = $this->eventDispatcher->dispatch(
             new CreatingPaginationEvent($paginator)
         );
-        $pagination = $event->getPagination();
+        $pagination = $event->getPagination() ?? new SimplePagination($paginator);
         $this->view->assignMultiple(
             [
                 'news' => $news,
