@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-    <path d="M1,.89v14H11.51V4.4L8,.89Z" style="fill:#efefef"/>
-    <path d="M8,4.38V.89L11.51,4.4Z" style="fill:#fff;isolation:isolate;opacity:0.6499999761581421"/>
-    <path d="M10.64,5.28V9.67L7.13,5.28Z" style="fill:#b9b9b9"/>
-    <path d="M3.27,3.18H7.13V4H3.27Z" style="fill:#666"/>
-    <path d="M3.27,11.86h6v.78h-6Z" style="fill:#b9b9b9"/>
-    <path d="M3.27,10.12h6v.78h-6Z" style="fill:#b9b9b9"/>
-    <path d="M3.27,8.39h6v.78h-6Z" style="fill:#b9b9b9"/>
-    <path d="M3.27,6.65h6v.78h-6Z" style="fill:#b9b9b9"/>
-    <path d="M3.27,4.91h6V5.7h-6Z" style="fill:#b9b9b9"/>
-    <path d="M1,.89v14H11.51V4.4h0L8,.89H1Zm.88.87H7.13V5.28h3.51v8.77H1.86ZM8,2.13,10.27,4.4H8Z" style="fill:#999"/>
-    <path d="M14.44,13.17,11.73,7.06H9.22v.88h1L7.87,13.17H7.13v.88h2.5v-.88H8.84l.56-1.25h2.54l.55,1.25H12v.88H15v-.88ZM9.79,11l.87-2,.88,2Z"/>
-    <polygon points="11.55 11.03 10.67 9.05 9.79 11.03 11.55 11.03" style="fill:#fff"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 .89v14h10.51V4.4L8 .89Z" style="fill:#efefef"/><path d="M8 4.38V.89l3.51 3.51Z" style="fill:#fff;isolation:isolate;opacity:.6499999761581421"/><path d="M10.64 5.28v4.39L7.13 5.28Z" style="fill:#b9b9b9"/><path d="M3.27 3.18h3.86V4H3.27Z" style="fill:#666"/><path d="M3.27 11.86h6v.78h-6ZM3.27 10.12h6v.78h-6ZM3.27 8.39h6v.78h-6ZM3.27 6.65h6v.78h-6ZM3.27 4.91h6v.79h-6Z" style="fill:#b9b9b9"/><path d="M1 .89v14h10.51V4.4L8 .89H1Zm.88.87h5.25v3.52h3.51v8.77H1.86ZM8 2.13l2.27 2.27H8Z" style="fill:#999"/><path d="m14.44 13.17-2.71-6.11H9.22v.88h1l-2.35 5.23h-.74v.88h2.5v-.88h-.79l.56-1.25h2.54l.55 1.25H12v.88h3v-.88ZM9.79 11l.87-2 .88 2Z"/><path d="m11.55 11.03-.88-1.98-.88 1.98h1.76z" style="fill:#fff"/></svg>
