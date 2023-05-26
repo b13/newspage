@@ -28,7 +28,7 @@ class NewsController extends ActionController
         $this->newsRepository = $newsRepository;
     }
 
-    public function listAction(array $filter = [], int $page = 1): void
+    public function listAction(array $filter = [], int $page = 1)
     {
         foreach ($this->settings['prefilters'] ?? [] as $type => $value) {
             if ($value !== '') {
