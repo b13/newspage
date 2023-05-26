@@ -6,7 +6,7 @@
     "homepage": "https://b13.com",
     "require": {
         "php": ">=7.4",
-        "typo3/cms-core": "^10.0 || ^11.5"
+        "typo3/cms-core": "^10.0 || ^11.5 || ^12"
     },
     "autoload": {
         "psr-4": {
