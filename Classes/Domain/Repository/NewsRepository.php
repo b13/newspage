@@ -89,6 +89,6 @@ class NewsRepository extends Repository
             }
         }
 
-        return $query->logicalAnd($constraints);
+        return $query->logicalAnd(...$constraints);
     }
 }
