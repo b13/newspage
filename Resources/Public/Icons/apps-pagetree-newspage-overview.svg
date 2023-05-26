@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-    <path d="M1,1V15H11.5V4.5L8,1Z" style="fill:#efefef"/>
-    <path d="M8,4.48V1l3.5,3.5Z" style="fill:#fff;isolation:isolate;opacity:0.6499999761581421"/>
-    <path d="M10.63,5.37V9.75L7.12,5.37Z" style="fill:#b9b9b9"/>
-    <path d="M3.29,3.29H7.12v.78H3.29Z" style="fill:#666"/>
-    <path d="M3.29,11.93H9.21v.78H3.29Z" style="fill:#b9b9b9"/>
-    <path d="M3.29,10.2H9.21V11H3.29Z" style="fill:#b9b9b9"/>
-    <path d="M3.29,8.47H9.21v.78H3.29Z" style="fill:#b9b9b9"/>
-    <path d="M3.29,6.75H9.21v.78H3.29Z" style="fill:#b9b9b9"/>
-    <path d="M3.29,5H9.21v.78H3.29Z" style="fill:#b9b9b9"/>
-    <path d="M1,1V15H11.5V4.5h0L8,1H1Zm.88.88H7.12V5.37h3.51v8.75H1.88ZM8,2.24,10.26,4.5H8Z" style="fill:#999"/>
-    <circle cx="11.07" cy="11.44" r="2.22" style="fill:#fff"/>
-    <path d="M11.07,8.76a4.22,4.22,0,0,0-3.94,2.68,4.23,4.23,0,0,0,7.88,0A4.25,4.25,0,0,0,11.07,8.76Zm0,4.48a1.79,1.79,0,1,1,1.78-1.79h0A1.8,1.8,0,0,1,11.07,13.24Zm0-2.87A1.07,1.07,0,0,0,10,11.45a1.1,1.1,0,0,0,1.06,1.07,1.08,1.08,0,0,0,1.09-1.08h0a1.08,1.08,0,0,0-1.08-1.07Z"
-          style="fill:#639"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 1v14h10.5V4.5L8 1Z" style="fill:#efefef"/><path d="M8 4.48V1l3.5 3.5Z" style="fill:#fff;isolation:isolate;opacity:.6499999761581421"/><path d="M10.63 5.37v4.38L7.12 5.37Z" style="fill:#b9b9b9"/><path d="M3.29 3.29h3.83v.78H3.29Z" style="fill:#666"/><path d="M3.29 11.93h5.92v.78H3.29ZM3.29 10.2h5.92v.8H3.29ZM3.29 8.47h5.92v.78H3.29ZM3.29 6.75h5.92v.78H3.29ZM3.29 5h5.92v.78H3.29Z" style="fill:#b9b9b9"/><path d="M1 1v14h10.5V4.5L8 1H1Zm.88.88h5.24v3.49h3.51v8.75H1.88ZM8 2.24l2.26 2.26H8Z" style="fill:#999"/><circle cx="11.07" cy="11.44" r="2.22" style="fill:#fff"/><path d="M11.07 8.76a4.22 4.22 0 0 0-3.94 2.68 4.23 4.23 0 0 0 7.88 0 4.25 4.25 0 0 0-3.94-2.68Zm0 4.48a1.79 1.79 0 1 1 1.78-1.79 1.8 1.8 0 0 1-1.78 1.79Zm0-2.87A1.07 1.07 0 0 0 10 11.45a1.1 1.1 0 0 0 1.06 1.07 1.08 1.08 0 0 0 1.09-1.08 1.08 1.08 0 0 0-1.08-1.07Z" style="fill:#639"/></svg>

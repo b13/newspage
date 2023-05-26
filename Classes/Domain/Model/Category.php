@@ -15,10 +15,12 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Category extends AbstractEntity
 {
-    /**
-     * @var string
-     */
-    protected $name;
+    protected string $name = '';
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
 
     public function getName(): string
     {

@@ -49,28 +49,31 @@ defined('TYPO3_MODE') or die('Access denied.');
         'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:filter.categories'
     );
 
-    $icons = [
-        'apps-pagetree-newspage-page' => 'apps-pagetree-newspage-page',
-        'apps-pagetree-newspage-page-hideinmenu' => 'apps-pagetree-newspage-page-hideinmenu',
-        'apps-pagetree-newspage-article' => 'apps-pagetree-newspage-article',
-        'apps-pagetree-newspage-article-hideinmenu' => 'apps-pagetree-newspage-article-hideinmenu',
-        'apps-pagetree-newspage-category' => 'apps-pagetree-newspage-category',
-        'apps-pagetree-newspage-category-hideinmenu' => 'apps-pagetree-newspage-category-hideinmenu',
-        'apps-pagetree-newspage-overview' => 'apps-pagetree-newspage-overview',
-        'apps-pagetree-newspage-overview-hideinmenu' => 'apps-pagetree-newspage-overview-hideinmenu',
-        'apps-pagetree-newspage-tag' => 'apps-pagetree-newspage-tag',
-        'apps-pagetree-newspage-tag-hideinmenu' => 'apps-pagetree-newspage-tag-hideinmenu',
-        'mimetypes-newspage' => 'mimetypes-newspage',
-        'apps-pagetree-folder-newspages' => 'apps-pagetree-folder-newspages'
-    ];
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-    foreach ($icons as $identifier => $path) {
-        if (!$iconRegistry->isRegistered($identifier)) {
-            $iconRegistry->registerIcon(
-                $identifier,
-                \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                ['source' => 'EXT:newspage/Resources/Public/Icons/' . $path . '.svg']
-            );
+    $typo3Version = new \TYPO3\CMS\Core\Information\Typo3Version();
+    if (version_compare($typo3Version->getVersion(), '11.0.0', '<')) {
+        $icons = [
+            'apps-pagetree-newspage-page' => 'apps-pagetree-newspage-page',
+            'apps-pagetree-newspage-page-hideinmenu' => 'apps-pagetree-newspage-page-hideinmenu',
+            'apps-pagetree-newspage-article' => 'apps-pagetree-newspage-article',
+            'apps-pagetree-newspage-article-hideinmenu' => 'apps-pagetree-newspage-article-hideinmenu',
+            'apps-pagetree-newspage-category' => 'apps-pagetree-newspage-category',
+            'apps-pagetree-newspage-category-hideinmenu' => 'apps-pagetree-newspage-category-hideinmenu',
+            'apps-pagetree-newspage-overview' => 'apps-pagetree-newspage-overview',
+            'apps-pagetree-newspage-overview-hideinmenu' => 'apps-pagetree-newspage-overview-hideinmenu',
+            'apps-pagetree-newspage-tag' => 'apps-pagetree-newspage-tag',
+            'apps-pagetree-newspage-tag-hideinmenu' => 'apps-pagetree-newspage-tag-hideinmenu',
+            'mimetypes-newspage' => 'mimetypes-newspage',
+            'apps-pagetree-folder-newspages' => 'apps-pagetree-folder-newspages'
+        ];
+        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+        foreach ($icons as $identifier => $path) {
+            if (!$iconRegistry->isRegistered($identifier)) {
+                $iconRegistry->registerIcon(
+                    $identifier,
+                    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    ['source' => 'EXT:newspage/Resources/Public/Icons/' . $path . '.svg']
+                );
+            }
         }
     }
 })();

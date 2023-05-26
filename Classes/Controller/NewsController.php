@@ -12,25 +12,18 @@ namespace B13\Newspage\Controller;
  */
 
 use B13\Newspage\Domain\Repository\NewsRepository;
+use B13\Newspage\Event\CreatingPaginationEvent;
 use B13\Newspage\Service\FilterService;
-use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 
 class NewsController extends ActionController
 {
-    /**
-     * @var array
-     */
-    protected $preFilters = [];
+    protected NewsRepository $newsRepository;
+    protected array $preFilters = [];
 
-    /**
-     * @var NewsRepository
-     */
-    protected $newsRepository;
-
-    public function injectNewsRepository(NewsRepository $newsRepository)
+    public function __construct(NewsRepository $newsRepository)
     {
         $this->newsRepository = $newsRepository;
     }
@@ -53,7 +46,10 @@ class NewsController extends ActionController
         }
 
         $paginator = new QueryResultPaginator($news, $page, (int)($this->settings['limit'] ?? 10));
-        $pagination = new SimplePagination($paginator);
+        $event = $this->eventDispatcher->dispatch(
+            new CreatingPaginationEvent($paginator)
+        );
+        $pagination = $event->getPagination() ?? new SimplePagination($paginator);
         $this->view->assignMultiple(
             [
                 'news' => $news,
