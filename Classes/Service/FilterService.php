@@ -11,7 +11,6 @@ namespace B13\Newspage\Service;
   */
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 class FilterService
 {
@@ -36,8 +35,7 @@ class FilterService
 
     public static function getFilterOptionsForFluid(string $filter): array
     {
-        $filterObj = GeneralUtility::makeInstance(ObjectManager::class)
-            ->get($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][$filter]['class']);
+        $filterObj = GeneralUtility::makeInstance($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][$filter]['class']);
 
         return call_user_func([$filterObj, 'getItems']);
     }
