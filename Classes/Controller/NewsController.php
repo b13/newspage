@@ -14,6 +14,7 @@ namespace B13\Newspage\Controller;
 use B13\Newspage\Domain\Repository\NewsRepository;
 use B13\Newspage\Event\CreatingPaginationEvent;
 use B13\Newspage\Service\FilterService;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
@@ -28,7 +29,7 @@ class NewsController extends ActionController
         $this->newsRepository = $newsRepository;
     }
 
-    public function listAction(array $filter = [], int $page = 1)
+    public function listAction(array $filter = [], int $page = 1): ResponseInterface
     {
         foreach ($this->settings['prefilters'] ?? [] as $type => $value) {
             if ($value !== '') {
@@ -59,9 +60,11 @@ class NewsController extends ActionController
                 'pages' => range(1, $pagination->getLastPageNumber()),
             ]
         );
+
+        return $this->htmlResponse();
     }
 
-    public function teaserAction(): void
+    public function teaserAction(): ResponseInterface
     {
         $uids = GeneralUtility::intExplode(',', $this->settings['news'] ?? '', true);
         $news = [];
@@ -69,9 +72,11 @@ class NewsController extends ActionController
             $news[] = $this->newsRepository->findByUid($uid);
         }
         $this->view->assign('news', $news);
+
+        return $this->htmlResponse();
     }
 
-    public function latestAction(): void
+    public function latestAction(): ResponseInterface
     {
         $settings = [
             'limit' => (int)($this->settings['limit'] ?? 0),
@@ -81,6 +86,8 @@ class NewsController extends ActionController
         ];
         $news = $this->newsRepository->findLatest($settings);
         $this->view->assign('news', $news);
+
+        return $this->htmlResponse();
     }
 
     protected function getFilterOptions(): array
