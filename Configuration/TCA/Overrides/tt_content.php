@@ -18,7 +18,8 @@ defined('TYPO3_MODE') or die('Access denied.');
             $ext,
             $plugin,
             $locallang . ':' . strtolower($plugin) . '.label',
-            'EXT:newspage/Resources/Public/Icons/Extension.svg'
+            'EXT:newspage/Resources/Public/Icons/Extension.svg',
+            'newspage',
         );
         $GLOBALS['TCA']['tt_content']['types'][$pluginSignature] = $GLOBALS['TCA']['tt_content']['types']['header']; // TODO: why this type?
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
@@ -32,4 +33,12 @@ defined('TYPO3_MODE') or die('Access denied.');
         $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds'][',' . $pluginSignature] =
             $flexformPath . $plugin . '.xml';
     }
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItemGroup(
+        'tt_content',
+        'CType',
+        'newspage',
+        'Newspage Plugins',
+        'before:lists'
+    );
 })();
