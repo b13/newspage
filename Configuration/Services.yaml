@@ -12,3 +12,6 @@ services:
       - name: event.listener
         identifier: 'ext-newspage-simplePaginationProvider'
         event: B13\Newspage\Event\CreatingPaginationEvent
+
+  B13\Newspage\Filter\CategoriesFilter:
+    public: true
