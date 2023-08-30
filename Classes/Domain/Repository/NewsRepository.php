@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace B13\Newspage\Domain\Repository;
@@ -11,19 +12,25 @@ namespace B13\Newspage\Domain\Repository;
  * of the License, or any later version.
  */
 
+use B13\Newspage\Filter\FilterInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
-use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
+/*
+ * @extends Repository<\B13\Newspage\Domain\Model\News>
+ */
 class NewsRepository extends Repository
 {
     protected $defaultOrderings = [
-        'tx_newspage_date' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+        'tx_newspage_date' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING,
     ];
 
+    /**
+     * @return QueryInterface
+     */
     public function createQuery()
     {
         $query = parent::createQuery();
@@ -79,16 +86,23 @@ class NewsRepository extends Repository
         $constraints[] = $query->getConstraint();
         foreach ($filter as $field => $value) {
             if ($value) {
-                $filterObj = GeneralUtility::makeInstance(ObjectManager::class)
-                    ->get($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][ucfirst($field)]['class']);
-
-                $constraint = call_user_func([$filterObj, 'getQueryConstraint'], $value, $query);
-                if (!is_null($constraint)) {
-                    $constraints[] = $constraint;
+                if (isset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][ucfirst($field)]['class'])) {
+                    if (!class_exists($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][ucfirst($field)]['class'])) {
+                        throw new \InvalidArgumentException('no such class ' . $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][ucfirst($field)]['class'], 1693396991);
+                    }
+                    /** @var FilterInterface $filterObj */
+                    $filterObj = GeneralUtility::makeInstance($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][ucfirst($field)]['class']);
+                    if (!$filterObj instanceof FilterInterface) {
+                        throw new \InvalidArgumentException($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][ucfirst($field)]['class'] . ' must implement FilterInterface', 1693396992);
+                    }
+                    $constraint = $filterObj->getQueryConstraint($value, $query);
+                    if (!is_null($constraint)) {
+                        $constraints[] = $constraint;
+                    }
                 }
             }
         }
 
-        return $query->logicalAnd($constraints);
+        return $query->logicalAnd(...$constraints);
     }
 }

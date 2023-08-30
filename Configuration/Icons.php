@@ -1,4 +1,5 @@
 <?php
+
 return [
     'apps-pagetree-folder-newspages' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,

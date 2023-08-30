@@ -6,6 +6,12 @@ services:
 
   B13\Newspage\:
     resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  B13\Newspage\Filter\CategoryFilter:
+    public: true
+  B13\Newspage\Filter\CategoriesFilter:
+    public: true
 
   B13\Newspage\EventListener\SimplePaginationProvider:
     tags:

@@ -10,10 +10,10 @@ namespace B13\Newspage\Filter;
   * of the License, or any later version.
   */
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class DateFilter implements FilterInterface
 {
@@ -22,14 +22,13 @@ class DateFilter implements FilterInterface
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getConnectionForTable('pages')->createQueryBuilder();
         $years = $queryBuilder
-            ->selectLiteral('DISTINCT(YEAR(tx_newspage_date))')
+            ->selectLiteral('DISTINCT(YEAR(tx_newspage_date)) as year')
             ->from('pages')
             ->where(
                 $queryBuilder->expr()->eq('doktype', 24)
             )
-            ->execute()
-            ->fetchAll(\PDO::FETCH_COLUMN);
-
+            ->executeQuery()
+            ->fetchFirstColumn();
         // in order for the f:form.select view helper to send and display the correct values,
         // we have to make the value and key the same
         $return = [];
@@ -38,7 +37,6 @@ class DateFilter implements FilterInterface
         }
         return $return;
     }
-
 
     public function getQueryConstraint($filter, QueryInterface $query): ?ConstraintInterface
     {

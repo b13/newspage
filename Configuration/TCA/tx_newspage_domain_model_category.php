@@ -1,5 +1,6 @@
 <?php
-defined('TYPO3_MODE') or die('Access denied!');
+
+defined('TYPO3') or die('Access denied!');
 
 return [
     'ctrl' => [
@@ -17,11 +18,11 @@ return [
             'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:category.name',
             'config' => [
                 'type' => 'input',
-                'eval' => 'trim'
-            ]
-        ]
+                'eval' => 'trim',
+            ],
+        ],
     ],
     'types' => [
-        '0' => ['showitem' => 'name']
-    ]
+        '0' => ['showitem' => 'name'],
+    ],
 ];

@@ -1,7 +1,8 @@
 <?php
-defined('TYPO3_MODE') or die('Access denied.');
 
-(function(){
+defined('TYPO3') or die('Access denied.');
+
+(function () {
     $ext = 'Newspage';
     $locallang = 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf';
     $flexformPath = 'FILE:EXT:newspage/Configuration/FlexForms/';
@@ -9,7 +10,7 @@ defined('TYPO3_MODE') or die('Access denied.');
     $plugins = [
         'List',
         'Latest',
-        'Teaser'
+        'Teaser',
     ];
 
     foreach ($plugins as $plugin) {

@@ -1,5 +1,6 @@
 <?php
-defined('TYPO3_MODE') or die('Access denied.');
+
+defined('TYPO3') or die('Access denied.');
 
 (function () {
     $dokType = '24';
@@ -22,8 +23,8 @@ defined('TYPO3_MODE') or die('Access denied.');
     $GLOBALS['TCA']['pages']['types'][$dokType]['columnsOverrides'] = [
         'title' => [
             'config' => [
-                'eval' => 'required'
-            ]
+                'eval' => 'required',
+            ],
         ],
         'media' => [
             'description' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:media.description',
@@ -33,14 +34,14 @@ defined('TYPO3_MODE') or die('Access denied.');
                         'uid_local' => [
                             'config' => [
                                 'appearance' => [
-                                    'elementBrowserAllowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ]
+                                    'elementBrowserAllowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ];
 
     $columns = [
@@ -51,8 +52,8 @@ defined('TYPO3_MODE') or die('Access denied.');
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'dbType' => 'datetime',
-                'eval' => 'datetime,required'
-            ]
+                'eval' => 'datetime,required',
+            ],
         ],
         'tx_newspage_categories' => [
             'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:categories',
@@ -62,9 +63,9 @@ defined('TYPO3_MODE') or die('Access denied.');
                 'renderType' => 'selectMultipleSideBySide',
                 'default' => 0,
                 'foreign_table' => 'tx_newspage_domain_model_category',
-                'foreign_table_where' => 'tx_newspage_domain_model_category.sys_language_uid IN (-1,0)'
-            ]
-        ]
+                'foreign_table_where' => 'tx_newspage_domain_model_category.sys_language_uid IN (-1,0)',
+            ],
+        ],
     ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $columns);

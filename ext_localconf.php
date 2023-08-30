@@ -1,8 +1,8 @@
 <?php
 
-defined('TYPO3_MODE') or die('Access denied.');
+defined('TYPO3') or die('Access denied.');
 
-(function(){
+(function () {
     // Hook to dynamically add filters to flexform
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Configuration\FlexForm\FlexFormTools::class]['flexParsing'][]
         = \B13\Newspage\Hooks\PrefilterFlexform::class;
@@ -30,7 +30,6 @@ defined('TYPO3_MODE') or die('Access denied.');
         [],
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
-
 
     B13\Newspage\Service\FilterService::registerFilter(
         'Date',
@@ -63,7 +62,7 @@ defined('TYPO3_MODE') or die('Access denied.');
             'apps-pagetree-newspage-tag' => 'apps-pagetree-newspage-tag',
             'apps-pagetree-newspage-tag-hideinmenu' => 'apps-pagetree-newspage-tag-hideinmenu',
             'mimetypes-newspage' => 'mimetypes-newspage',
-            'apps-pagetree-folder-newspages' => 'apps-pagetree-folder-newspages'
+            'apps-pagetree-folder-newspages' => 'apps-pagetree-folder-newspages',
         ];
         $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
         foreach ($icons as $identifier => $path) {
