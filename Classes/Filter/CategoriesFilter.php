@@ -11,16 +11,13 @@ namespace B13\Newspage\Filter;
   */
 
 use B13\Newspage\Domain\Repository\CategoryRepository;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class CategoriesFilter implements FilterInterface
 {
-    protected CategoryRepository $categoryRepository;
-
-    public function __construct(CategoryRepository $categoryRepository)
+    public function __construct(protected CategoryRepository $categoryRepository)
     {
-        $this->categoryRepository = $categoryRepository;
     }
 
     public function getItems(): array

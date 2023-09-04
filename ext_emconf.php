@@ -4,7 +4,7 @@ $EM_CONF[$_EXTKEY] = [
     'title' => 'News Page',
     'description' => 'Use pages as news records.',
     'category' => 'fe',
-    'version' => '1.0.6',
+    'version' => '2.0.0',
     'state' => 'stable',
     'clearcacheonload' => 1,
     'author' => 'b13 GmbH',
@@ -14,5 +14,5 @@ $EM_CONF[$_EXTKEY] = [
         'depends' => [
             'typo3' => '',
         ],
-    ]
+    ],
 ];

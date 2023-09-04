@@ -10,8 +10,8 @@ namespace B13\Newspage\Filter;
   * of the License, or any later version.
   */
 
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 interface FilterInterface
 {

@@ -11,20 +11,13 @@ namespace B13\Newspage\Filter;
   */
 
 use B13\Newspage\Domain\Repository\CategoryRepository;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class CategoryFilter implements FilterInterface
 {
-
-    /**
-     * @var \B13\Newspage\Domain\Repository\CategoryRepository
-     */
-    protected $categoryRepository;
-
-    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
+    public function __construct(protected CategoryRepository $categoryRepository)
     {
-        $this->categoryRepository = $categoryRepository;
     }
 
     public function getItems(): array
