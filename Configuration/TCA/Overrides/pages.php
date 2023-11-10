@@ -4,12 +4,21 @@ defined('TYPO3') or die('Access denied.');
 
 (function () {
     $dokType = '24';
-    $newsType = [
-        'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news',
-        $dokType,
-        'apps-pagetree-newspage-page',
-        'default',
-    ];
+    if ((\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class))->getMajorVersion() < 12) {
+        $newsType = [
+            'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news',
+            $dokType,
+            'apps-pagetree-newspage-page',
+            'default',
+        ];
+    } else {
+        $newsType = [
+            'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news',
+            'value' => $dokType,
+            'icon' => 'apps-pagetree-newspage-page',
+            'group' => 'default',
+        ];
+    }
 
     // adding the new doktypes to the type select
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('pages', 'doktype', $newsType);
@@ -48,11 +57,15 @@ defined('TYPO3') or die('Access denied.');
         'tx_newspage_date' => [
             'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news.date',
             'l10n_mode' => 'exclude',
-            'config' => [
+            'config' => (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class))->getMajorVersion() < 12 ? [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'dbType' => 'datetime',
                 'eval' => 'datetime,required',
+            ] : [
+                'type' => 'datetime',
+                'format' => 'date',
+                'eval' => 'required'
             ],
         ],
         'tx_newspage_categories' => [
