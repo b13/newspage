@@ -64,7 +64,8 @@ defined('TYPO3') or die('Access denied.');
                 'eval' => 'datetime,required',
             ] : [
                 'type' => 'datetime',
-                'format' => 'date',
+                'format' => 'datetime',
+                'dbType' => 'datetime',
                 'eval' => 'required'
             ],
         ],
