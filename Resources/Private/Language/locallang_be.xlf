@@ -115,6 +115,12 @@
 			<trans-unit id="newContentWizard.latest.description">
 				<source>Shows a configurable amount of newest news, optionally filtered by category or subcategory.</source>
 			</trans-unit>
+			<trans-unit id="layout.button.save">
+				<source>Save page properties</source>
+			</trans-unit>
+			<trans-unit id="layout_edit_mode">
+				<source>Enable editing page properties in page layout mode</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -12,9 +12,15 @@ services:
     public: true
   B13\Newspage\Filter\CategoriesFilter:
     public: true
+  B13\Newspage\Controller\LayoutModuleEditController:
+    public: true
 
   B13\Newspage\EventListener\SimplePaginationProvider:
     tags:
       - name: event.listener
         identifier: 'ext-newspage-simplePaginationProvider'
         event: B13\Newspage\Event\CreatingPaginationEvent
+  B13\Newspage\EventListener\NewsLayoutListener:
+    tags:
+      - name: event.listener
+        identifier: 'ext-newspage-newsLayoutListener'

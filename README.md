@@ -57,15 +57,26 @@ For an example take a look at `EXT:newspage/Configuration/FlexForms/Filter/Categ
 At b13 we often use additional page types (doktype) for categories, overview pages, and tags. This extension adds a 
 number of assets ready to use for your own custom doktypes:
 
-|Icon Identifier|Icon|
-|---------------|----|
-|apps-pagetree-newspage-page|<img src="Resources/Public/Icons/apps-pagetree-newspage-page.svg" style="width: 40px; height: 40px;"/>|
-|apps-pagetree-newspage-article|<img src="Resources/Public/Icons/apps-pagetree-newspage-article.svg" style="width: 40px; height: 40px;"/>|
-|apps-pagetree-newspage-category|<img src="Resources/Public/Icons/apps-pagetree-newspage-category.svg" style="width: 40px; height: 40px;"/>|
-|apps-pagetree-newspage-overview|<img src="Resources/Public/Icons/apps-pagetree-newspage-overview.svg" style="width: 40px; height: 40px;"/>|
-|apps-pagetree-newspage-tag|<img src="Resources/Public/Icons/apps-pagetree-newspage-tag.svg" style="width: 40px; height: 40px;"/>|
-|mimetypes-newspage-page|<img src="Resources/Public/Icons/mimetypes-newspage-page.svg" style="width: 40px; height: 40px;"/>|
+| Icon Identifier                 | Icon                                                                                                       |
+|---------------------------------|------------------------------------------------------------------------------------------------------------|
+| apps-pagetree-newspage-page     | <img src="Resources/Public/Icons/apps-pagetree-newspage-page.svg" style="width: 40px; height: 40px;"/>     |
+| apps-pagetree-newspage-article  | <img src="Resources/Public/Icons/apps-pagetree-newspage-article.svg" style="width: 40px; height: 40px;"/>  |
+| apps-pagetree-newspage-category | <img src="Resources/Public/Icons/apps-pagetree-newspage-category.svg" style="width: 40px; height: 40px;"/> |
+| apps-pagetree-newspage-overview | <img src="Resources/Public/Icons/apps-pagetree-newspage-overview.svg" style="width: 40px; height: 40px;"/> |
+| apps-pagetree-newspage-tag      | <img src="Resources/Public/Icons/apps-pagetree-newspage-tag.svg" style="width: 40px; height: 40px;"/>      |
+| mimetypes-newspage-page         | <img src="Resources/Public/Icons/mimetypes-newspage-page.svg" style="width: 40px; height: 40px;"/>         |
 
+
+## Page Layout edit mode
+ 
+In the page module layout view the most important (title, category, media, slug, date) properties can be edited without leaving the layout view.
+This behavior can be disabled in the extension settings (`'layout_edit_mode' => '0'`) to display a normal page view.
+
+To customize the fields use the dedicated `tx_newspage_layout` palette:
+
+```php
+$GLOBALS['TCA']['pages']['palettes']['tx_newspage_layout']['showitem'] = 'title,abstract,slug;';
+```
 
 ## ToDos
 
