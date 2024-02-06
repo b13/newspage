@@ -69,7 +69,7 @@ number of assets ready to use for your own custom doktypes:
 
 ## Page Layout edit mode
  
-In the page module layout view the most important (title, category, media, slug, date) properties can be edited without leaving the layout view.
+In the page module layout view, the most important properties (title, category, media, slug, date) can be edited without leaving the layout view.
 This behavior can be disabled in the extension settings (`'layout_edit_mode' => '0'`) to display a normal page view.
 
 To customize the fields use the dedicated `tx_newspage_layout` palette:
