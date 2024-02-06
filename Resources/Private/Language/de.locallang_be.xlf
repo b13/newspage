@@ -154,6 +154,10 @@
 				<source>Save page properties</source>
 				<target>Seiteneigenschaften speichern</target>
 			</trans-unit>
+			<trans-unit id="layout_edit_mode">
+				<source>Enable editing page properties in page layout mode</source>
+				<target>Bearbeiten der Seiteneigenschaften im Page Modul ermöglichen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
