@@ -75,7 +75,7 @@ This behavior can be disabled in the extension settings (`'layout_edit_mode' => 
 To customize the fields, use the dedicated `tx_newspage_layout` palette:
 
 ```php
-$GLOBALS['TCA']['pages']['palettes']['tx_newspage_layout']['showitem'] = 'title,abstract,slug;';
+$GLOBALS['TCA']['pages']['palettes']['tx_newspage_layout']['showitem'] = 'title,abstract,slug';
 ```
 
 ## ToDos
