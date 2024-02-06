@@ -72,7 +72,7 @@ number of assets ready to use for your own custom doktypes:
 In the page module layout view, the most important properties (title, category, media, slug, date) can be edited without leaving the layout view.
 This behavior can be disabled in the extension settings (`'layout_edit_mode' => '0'`) to display a normal page view.
 
-To customize the fields use the dedicated `tx_newspage_layout` palette:
+To customize the fields, use the dedicated `tx_newspage_layout` palette:
 
 ```php
 $GLOBALS['TCA']['pages']['palettes']['tx_newspage_layout']['showitem'] = 'title,abstract,slug;';
