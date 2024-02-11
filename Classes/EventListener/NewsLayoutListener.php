@@ -36,10 +36,14 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class NewsLayoutListener
 {
+    const DOKTYPE_NEWSPAGE = 24;
+
     public function __construct(
         protected readonly PageRenderer $pageRenderer,
         protected readonly IconFactory $iconFactory,
-        protected readonly ExtensionConfiguration $extensionConfiguration
+        protected readonly ExtensionConfiguration $extensionConfiguration,
+        protected readonly NodeFactory $nodeFactory,
+        protected readonly UriBuilder $uriBuilder,
     ) {}
 
     public function __invoke(ModifyPageLayoutContentEvent $event): void
@@ -55,17 +59,19 @@ final class NewsLayoutListener
         $pageInfo = BackendUtility::readPageAccess($pageId, $this->getBackendUser()->getPagePermsClause(Permission::PAGE_SHOW));
 
         // Display page property inline edit only for doktype=24 and function=1 (layout mode)
-        if($function !== 1 || $pageInfo['doktype'] !== 24 || !$this->isPageEditable($language, $pageInfo)) {
+        if($function !== 1 || $pageInfo['doktype'] !== self::DOKTYPE_NEWSPAGE || !$this->isPageEditable($language, $pageInfo)) {
             return;
         }
 
-        /** @var NodeFactory $nodeFactory */
-        $nodeFactory = GeneralUtility::makeInstance(NodeFactory::class);
         $formResultCompiler = GeneralUtility::makeInstance(FormResultCompiler::class);
         $formDataGroup = GeneralUtility::makeInstance(TcaDatabaseRecord::class);
 
         if ($language > 0) {
             $overlayRecord = $this->getLocalizedPageRecord($language, $pageId);
+            if ($overlayRecord === null) {
+               return;
+            }
+
             $pageId = $overlayRecord['uid'];
         }
 
@@ -77,27 +83,24 @@ final class NewsLayoutListener
         ];
 
         // Render only the palette "tx_newspage_layout" in page layout view:
-        $GLOBALS['TCA']['pages']['types']['24']['showitem'] = '--palette--;;tx_newspage_layout';
+        $GLOBALS['TCA']['pages']['types'][self::DOKTYPE_NEWSPAGE]['showitem'] = '--palette--;;tx_newspage_layout';
 
         $formData = $formDataCompiler->compile($formDataCompilerInput);
         $formData['renderType'] = 'fullRecordContainer';
 
-        $formResult = $nodeFactory->create($formData)->render();
+        $formResult = $this->nodeFactory->create($formData)->render();
         $formResultCompiler->mergeResult($formResult);
         $formResultCompiler->printNeededJSFunctions();
 
-        $params = [
-            'returnUrl' => $event->getRequest()->getAttribute('normalizedParams')->getRequestUri(),
+        $editUri = (string)$this->uriBuilder->buildUriFromRoute('tce_db', [
             'edit' => [
                 'pages' => [
                     $pageId => 'edit',
                 ],
             ],
-        ];
+            'redirect' => $event->getRequest()->getAttribute('normalizedParams')->getRequestUri(),
+        ]);
 
-        /** @var UriBuilder $uriBuilder */
-        $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
-        $editUri = (string)$uriBuilder->buildUriFromRoute('newspage_layout_edit', $params);
         $this->registerDocHeaderButtons($event->getModuleTemplate());
 
         $formContent = '
