@@ -150,6 +150,14 @@
 				<source>Shows a configurable amount of newest news, optionally filtered by category or subcategory.</source>
 				<target>Zeigt eine konfigurierbare Anzahl der neuesten Nachrichten an. Optional nur aus einer Kategorie oder Subkategorie.</target>
 			</trans-unit>
+			<trans-unit id="layout.button.save">
+				<source>Save page properties</source>
+				<target>Seiteneigenschaften speichern</target>
+			</trans-unit>
+			<trans-unit id="layout.edit.description">
+				<source>Enable editing page properties in page layout mode</source>
+				<target>Bearbeiten der Seiteneigenschaften im Page Modul ermöglichen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
