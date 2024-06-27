@@ -23,3 +23,8 @@ services:
     tags:
       - name: event.listener
         identifier: 'ext-newspage-newsLayoutListener'
+
+  B13\Newspage\EventListener\FlexFormPreFilterProvider:
+    tags:
+      - name: event.listener
+        identifier: 'ext-newspage-flexFormPreFilterProvider'
