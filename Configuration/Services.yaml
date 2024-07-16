@@ -10,6 +10,7 @@ services:
 
   B13\Newspage\Filter\CategoryFilter:
     public: true
+
   B13\Newspage\Filter\CategoriesFilter:
     public: true
 

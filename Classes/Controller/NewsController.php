@@ -91,7 +91,7 @@ class NewsController extends ActionController
     {
         $filterOptions = [];
         foreach (explode(',', $this->settings['filter']['by'] ?? []) as $filter) {
-            if (!in_array(strtolower($filter), $this->preFilters)) {
+            if (!in_array(strtolower($filter), $this->preFilters) || empty($this->preFilters[$filter])) {
                 $filterOptions[$filter]['items'] = FilterService::getFilterOptionsForFluid($filter);
             }
         }
