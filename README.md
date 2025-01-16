@@ -66,6 +66,16 @@ number of assets ready to use for your own custom doktypes:
 | apps-pagetree-newspage-tag      | <img src="Resources/Public/Icons/apps-pagetree-newspage-tag.svg" style="width: 40px; height: 40px;"/>      |
 | mimetypes-newspage-page         | <img src="Resources/Public/Icons/mimetypes-newspage-page.svg" style="width: 40px; height: 40px;"/>         |
 
+
+## Extensions providing further functionality to newspage
+
+### b13/newspage-page-header
+
+Available at https://github.com/b13/newspage-page-header
+
+This extension add fields of a news directly in the page layout view and allows quick editing of the most important 
+news related data without having to enter formengine.
+
 ## ToDos
 
 - `tx_newspage_domain_model_category` should be replaced by `sys_category` as there is no real value from creating a new model for a problem that is already solved within TYPO3
