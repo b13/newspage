@@ -1,2 +1,0 @@
-# cat=Newspage; type=boolean; label=LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:layout.edit.description
-layout_edit_mode = 0
