@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 defined('TYPO3') or die('Access denied.');
 
 (function () {
@@ -19,8 +21,9 @@ defined('TYPO3') or die('Access denied.');
             $ext,
             $plugin,
             $locallang . ':' . strtolower($plugin) . '.label',
-            'EXT:newspage/Resources/Public/Icons/Extension.svg',
+            'plugin-newspage',
             'newspage',
+            'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:newContentWizard.' . strtolower($plugin) . '.description'
         );
         $GLOBALS['TCA']['tt_content']['types'][$pluginSignature] = $GLOBALS['TCA']['tt_content']['types']['header']; // TODO: why this type?
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(

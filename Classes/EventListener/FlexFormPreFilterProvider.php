@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace B13\Newspage\EventListener;
 
 /*
@@ -15,7 +17,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class FlexFormPreFilterProvider
 {
-
     public function __invoke(AfterFlexFormDataStructureParsedEvent $event): void
     {
         $identifier = $event->getIdentifier();

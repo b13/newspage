@@ -3,32 +3,28 @@
         <type>array</type>
         <el>
             <settings.limit>
-                <TCEforms>
-                    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit.latest</label>
-                    <config>
-                        <type>input</type>
-                        <default>5</default>
-                        <eval>int</eval>
-                    </config>
-                </TCEforms>
+                <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit.latest</label>
+                <config>
+                    <type>input</type>
+                    <default>5</default>
+                    <eval>int</eval>
+                </config>
             </settings.limit>
             <settings.category>
-                <TCEforms>
-                    <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.category</label>
-                    <config>
-                        <type>select</type>
-                        <renderType>selectSingle</renderType>
-                        <items type="array">
-                            <numIndex index="0" type="array">
-                                <numIndex index="0">LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.placeholder</numIndex>
-                                <numIndex index="1">0</numIndex>
-                            </numIndex>
-                        </items>
-                        <foreign_table>tx_newspage_domain_model_category</foreign_table>
-                        <maxitems>1</maxitems>
-                        <size>1</size>
-                    </config>
-                </TCEforms>
+                <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.category</label>
+                <config>
+                    <type>select</type>
+                    <renderType>selectSingle</renderType>
+                    <items type="array">
+                        <numIndex index="0" type="array">
+                            <numIndex index="0">LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.placeholder</numIndex>
+                            <numIndex index="1">0</numIndex>
+                        </numIndex>
+                    </items>
+                    <foreign_table>tx_newspage_domain_model_category</foreign_table>
+                    <maxitems>1</maxitems>
+                    <size>1</size>
+                </config>
             </settings.category>
         </el>
     </ROOT>

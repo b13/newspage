@@ -25,9 +25,7 @@ class NewsController extends ActionController
 {
     protected array $preFilters = [];
 
-    public function __construct(protected NewsRepository $newsRepository)
-    {
-    }
+    public function __construct(protected NewsRepository $newsRepository) {}
 
     public function listAction(array $filter = [], int $page = 1): ResponseInterface
     {

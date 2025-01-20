@@ -1,24 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 defined('TYPO3') or die('Access denied.');
 
 (function () {
     $dokType = '24';
-    if ((\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class))->getMajorVersion() < 12) {
-        $newsType = [
-            'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news',
-            $dokType,
-            'apps-pagetree-newspage-page',
-            'default',
-        ];
-    } else {
-        $newsType = [
-            'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news',
-            'value' => $dokType,
-            'icon' => 'apps-pagetree-newspage-page',
-            'group' => 'default',
-        ];
-    }
+
+    $newsType = [
+        'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news',
+        'value' => $dokType,
+        'icon' => 'apps-pagetree-newspage-page',
+        'group' => 'default',
+    ];
 
     // adding the new doktypes to the type select
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('pages', 'doktype', $newsType);
@@ -38,17 +32,7 @@ defined('TYPO3') or die('Access denied.');
         'media' => [
             'description' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:media.description',
             'config' => [
-                'overrideChildTca' => [
-                    'columns' => [
-                        'uid_local' => [
-                            'config' => [
-                                'appearance' => [
-                                    'elementBrowserAllowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
+                'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
             ],
         ],
     ];
@@ -57,16 +41,11 @@ defined('TYPO3') or die('Access denied.');
         'tx_newspage_date' => [
             'label' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:news.date',
             'l10n_mode' => 'exclude',
-            'config' => (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class))->getMajorVersion() < 12 ? [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'dbType' => 'datetime',
-                'eval' => 'datetime,required',
-            ] : [
+            'config' => [
                 'type' => 'datetime',
                 'format' => 'datetime',
                 'dbType' => 'datetime',
-                'eval' => 'required'
+                'required' => true,
             ],
         ],
         'tx_newspage_categories' => [

@@ -12,8 +12,6 @@ This extension registers 3 Plugins:
     - this plugin shows a list of all news, optionally filtered by a value selected in the plugin, and optionally a frontend filter can be displayed
 - recent
 - teaser
-- newsJson
-  - this plugin comes with its own page type (`1623330999`) and returns all news as a JSON with teaser images pre-processed
 
 ## Filters
 

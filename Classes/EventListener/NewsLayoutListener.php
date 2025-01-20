@@ -36,7 +36,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class NewsLayoutListener
 {
-    const DOKTYPE_NEWSPAGE = 24;
+    public const DOKTYPE_NEWSPAGE = 24;
 
     public function __construct(
         protected readonly PageRenderer $pageRenderer,
@@ -48,18 +48,19 @@ final class NewsLayoutListener
 
     public function __invoke(ModifyPageLayoutContentEvent $event): void
     {
-        if(!$this->extensionConfiguration->get('newspage', 'layout_edit_mode')) {
+        if (!$this->extensionConfiguration->get('newspage', 'layout_edit_mode')) {
             return;
         }
 
-        $queryParams = $event->getRequest()->getQueryParams();
+        $request = $event->getRequest();
+        $queryParams = $request->getQueryParams();
         $pageId = (int)($queryParams['id'] ?? 0);
         $language = (int)($queryParams['language'] ?? 0);
         $function = (int)($queryParams['function'] ?? 1);
         $pageInfo = BackendUtility::readPageAccess($pageId, $this->getBackendUser()->getPagePermsClause(Permission::PAGE_SHOW));
 
         // Display page property inline edit only for doktype=24 and function=1 (layout mode)
-        if($function !== 1 || $pageInfo['doktype'] !== self::DOKTYPE_NEWSPAGE || !$this->isPageEditable($language, $pageInfo)) {
+        if ($function !== 1 || $pageInfo['doktype'] !== self::DOKTYPE_NEWSPAGE || !$this->isPageEditable($language, $pageInfo)) {
             return;
         }
 
@@ -69,23 +70,24 @@ final class NewsLayoutListener
         if ($language > 0) {
             $overlayRecord = $this->getLocalizedPageRecord($language, $pageId);
             if ($overlayRecord === null) {
-               return;
+                return;
             }
 
             $pageId = $overlayRecord['uid'];
         }
 
-        $formDataCompiler = GeneralUtility::makeInstance(FormDataCompiler::class, $formDataGroup);
+        $formDataCompiler = GeneralUtility::makeInstance(FormDataCompiler::class);
         $formDataCompilerInput = [
             'tableName' => 'pages',
             'command' => 'edit',
             'vanillaUid' => $pageId,
+            'request' => $request,
         ];
 
         // Render only the palette "tx_newspage_layout" in page layout view:
         $GLOBALS['TCA']['pages']['types'][self::DOKTYPE_NEWSPAGE]['showitem'] = '--palette--;;tx_newspage_layout';
 
-        $formData = $formDataCompiler->compile($formDataCompilerInput);
+        $formData = $formDataCompiler->compile($formDataCompilerInput, $formDataGroup);
         $formData['renderType'] = 'fullRecordContainer';
 
         $formResult = $this->nodeFactory->create($formData)->render();
@@ -120,7 +122,7 @@ final class NewsLayoutListener
         // Disable inline editing of the title because it conflicts with the slug field regenerate button
         $this->pageRenderer->addJsFooterInlineCode('title-edit-inline-disable', '
             document.querySelector("typo3-backend-editable-page-title").removeAttribute("editable")
-        ' );
+        ');
 
         $event->addHeaderContent($formContent);
     }
