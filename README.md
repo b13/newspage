@@ -65,16 +65,14 @@ number of assets ready to use for your own custom doktypes:
 | mimetypes-newspage-page         | <img src="Resources/Public/Icons/mimetypes-newspage-page.svg" style="width: 40px; height: 40px;"/>         |
 
 
-## Page Layout edit mode
- 
-In the page module layout view, the most important properties (title, category, media, slug, date) can be edited without leaving the layout view.
-This behavior can be disabled in the extension settings (`'layout_edit_mode' => '0'`) to display a regular page view.
+## Extensions providing further functionality to newspage
 
-To customize the fields, use the dedicated `tx_newspage_layout` palette:
+### b13/newspage-page-header
 
-```php
-$GLOBALS['TCA']['pages']['palettes']['tx_newspage_layout']['showitem'] = 'title,abstract,slug';
-```
+Available at https://github.com/b13/newspage-page-header
+
+This extension add fields of a news directly in the page layout view and allows quick editing of the most important 
+news related data without having to enter formengine.
 
 ## ToDos
 
