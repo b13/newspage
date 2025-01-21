@@ -32,7 +32,7 @@ defined('TYPO3') or die('Access denied.');
         'media' => [
             'description' => 'LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:media.description',
             'config' => [
-                'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+                'allowed' => 'common-image-types',
             ],
         ],
     ];
