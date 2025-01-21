@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace B13\Newspage\Filter;
 
 /*
@@ -16,9 +18,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class CategoriesFilter implements FilterInterface
 {
-    public function __construct(protected CategoryRepository $categoryRepository)
-    {
-    }
+    public function __construct(protected CategoryRepository $categoryRepository) {}
 
     public function getItems(): array
     {

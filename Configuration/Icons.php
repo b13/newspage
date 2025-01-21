@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'apps-pagetree-folder-newspages' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
@@ -48,5 +50,9 @@ return [
     'mimetypes-newspage' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:newspage/Resources/Public/Icons/mimetypes-newspage.svg',
+    ],
+    'plugin-newspage' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'source' => 'EXT:newspage/Resources/Public/Icons/Extension.svg',
     ],
 ];

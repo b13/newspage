@@ -12,8 +12,6 @@ This extension registers 3 Plugins:
     - this plugin shows a list of all news, optionally filtered by a value selected in the plugin, and optionally a frontend filter can be displayed
 - recent
 - teaser
-- newsJson
-  - this plugin comes with its own page type (`1623330999`) and returns all news as a JSON with teaser images pre-processed
 
 ## Filters
 
@@ -67,16 +65,14 @@ number of assets ready to use for your own custom doktypes:
 | mimetypes-newspage-page         | <img src="Resources/Public/Icons/mimetypes-newspage-page.svg" style="width: 40px; height: 40px;"/>         |
 
 
-## Page Layout edit mode
- 
-In the page module layout view, the most important properties (title, category, media, slug, date) can be edited without leaving the layout view.
-This behavior can be disabled in the extension settings (`'layout_edit_mode' => '0'`) to display a regular page view.
+## Extensions providing further functionality to newspage
 
-To customize the fields, use the dedicated `tx_newspage_layout` palette:
+### b13/newspage-edit-in-layout
 
-```php
-$GLOBALS['TCA']['pages']['palettes']['tx_newspage_layout']['showitem'] = 'title,abstract,slug';
-```
+Available at https://github.com/b13/newspage-edit-in-layout
+
+This extension add fields of a news directly in the page layout view and allows quick editing of the most important 
+news related data without having to enter formengine.
 
 ## ToDos
 

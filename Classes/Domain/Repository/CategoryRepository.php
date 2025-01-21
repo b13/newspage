@@ -14,6 +14,4 @@ namespace B13\Newspage\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
-class CategoryRepository extends Repository
-{
-}
+class CategoryRepository extends Repository {}

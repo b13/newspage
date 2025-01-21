@@ -1,4 +1,4 @@
-<TCEforms>
+<T3DataStructure>
     <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:category</label>
     <config>
         <type>select</type>
@@ -15,4 +15,4 @@
         <maxitems>1</maxitems>
         <size>1</size>
     </config>
-</TCEforms>
+</T3DataStructure>

@@ -1,64 +1,49 @@
 <T3DataStructure>
-    <meta>
-        <langDisable>1</langDisable>
-    </meta>
     <sheets>
         <sDEF>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.tab.general</sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.tab.general</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.limit>
-                        <TCEforms>
-                            <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit.list</label>
-                            <config>
-                                <type>input</type>
-                                <default>5</default>
-                                <eval>int,required</eval>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit.list</label>
+                        <config>
+                            <type>input</type>
+                            <default>5</default>
+                            <eval>int,required</eval>
+                        </config>
                     </settings.limit>
                 </el>
             </ROOT>
         </sDEF>
         <preFilters>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.tab.preFilters</sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.tab.preFilters</sheetTitle>
                 <type>array</type>
                 <el type="array"></el>
             </ROOT>
         </preFilters>
         <filter>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.tab.filter</sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.tab.filter</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.filter.show>
-                        <TCEforms>
-                            <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.show</label>
-                            <onChange>reload</onChange>
-                            <config>
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.show</label>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>check</type>
+                        </config>
                     </settings.filter.show>
                     <settings.filter.by>
-                        <TCEforms>
-                            <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by</label>
-                            <description>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by.description</description>
-                            <displayCond>FIELD:settings.filter.show:=:1</displayCond>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectMultipleSideBySide</renderType>
-                                <itemsProcFunc>B13\Newspage\Service\FilterService->getFiltersForFlexform</itemsProcFunc>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by</label>
+                        <description>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.filter.by.description</description>
+                        <displayCond>FIELD:settings.filter.show:=:1</displayCond>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectMultipleSideBySide</renderType>
+                            <itemsProcFunc>B13\Newspage\Service\FilterService->getFiltersForFlexform</itemsProcFunc>
+                        </config>
                     </settings.filter.by>
                 </el>
             </ROOT>
