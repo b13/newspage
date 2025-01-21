@@ -67,9 +67,9 @@ number of assets ready to use for your own custom doktypes:
 
 ## Extensions providing further functionality to newspage
 
-### b13/newspage-page-header
+### b13/newspage-edit-in-layout
 
-Available at https://github.com/b13/newspage-page-header
+Available at https://github.com/b13/newspage-edit-in-layout
 
 This extension add fields of a news directly in the page layout view and allows quick editing of the most important 
 news related data without having to enter formengine.
