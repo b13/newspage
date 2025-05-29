@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 return [
-    'apps-pagetree-folder-newspages' => [
+    'apps-pagetree-folder-contains-newspage' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:newspage/Resources/Public/Icons/apps-pagetree-folder-newspages.svg',
+        'source' => 'EXT:newspage/Resources/Public/Icons/apps-pagetree-folder-contains-newspage.svg',
     ],
     'apps-pagetree-newspage-article' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,

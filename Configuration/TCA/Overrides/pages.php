@@ -5,6 +5,13 @@ declare(strict_types=1);
 defined('TYPO3') or die('Access denied.');
 
 (function () {
+    // add module for folders containing news
+    $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
+        'label' => 'News',
+        'value' => 'newspage',
+        'icon' => 'apps-pagetree-folder-contains-newspage',
+    ];
+
     $dokType = '24';
 
     $newsType = [

@@ -35,7 +35,7 @@ B13\Newspage\Service\FilterService::registerFilter(
 );
 ```
 
-Your class should implement the `B13\Newspage\Filter\FilterInterface` and therefore implement the functions `getItems()` and `getQueryConstraint()`.
+Your class needs to implement the `B13\Newspage\Filter\FilterInterface` and therefore implement the functions `getItems()` and `getQueryConstraint()`.
 
 The function `getItems()` is used to get all possible values for the filter (both for the plugin settings, as well as the frontend filter).
 
@@ -55,15 +55,19 @@ For an example take a look at `EXT:newspage/Configuration/FlexForms/Filter/Categ
 At b13 we often use additional page types (doktype) for categories, overview pages, and tags. This extension adds a 
 number of assets ready to use for your own custom doktypes:
 
-| Icon Identifier                 | Icon                                                                                                       |
-|---------------------------------|------------------------------------------------------------------------------------------------------------|
-| apps-pagetree-newspage-page     | <img src="Resources/Public/Icons/apps-pagetree-newspage-page.svg" style="width: 40px; height: 40px;"/>     |
-| apps-pagetree-newspage-article  | <img src="Resources/Public/Icons/apps-pagetree-newspage-article.svg" style="width: 40px; height: 40px;"/>  |
-| apps-pagetree-newspage-category | <img src="Resources/Public/Icons/apps-pagetree-newspage-category.svg" style="width: 40px; height: 40px;"/> |
-| apps-pagetree-newspage-overview | <img src="Resources/Public/Icons/apps-pagetree-newspage-overview.svg" style="width: 40px; height: 40px;"/> |
-| apps-pagetree-newspage-tag      | <img src="Resources/Public/Icons/apps-pagetree-newspage-tag.svg" style="width: 40px; height: 40px;"/>      |
-| mimetypes-newspage-page         | <img src="Resources/Public/Icons/mimetypes-newspage-page.svg" style="width: 40px; height: 40px;"/>         |
+| Icon Identifier                        | Icon                                                                                            |
+|----------------------------------------|-------------------------------------------------------------------------------------------------|
+| apps-pagetree-folder-contains-newspage | ![Folder icon](Resources/Public/Icons/apps-pagetree-folder-contains-newspage.svg "Folder icon") |
+| apps-pagetree-newspage-page            | ![News Page icon](Resources/Public/Icons/apps-pagetree-newspage-page.svg "News Page icon")      |
+| apps-pagetree-newspage-article         | ![Article icon](Resources/Public/Icons/apps-pagetree-newspage-article.svg "Article icon")       |
+| apps-pagetree-newspage-category        | ![Category icon](Resources/Public/Icons/apps-pagetree-newspage-category.svg "Category icon")    |
+| apps-pagetree-newspage-overview        | ![Overview icon](Resources/Public/Icons/apps-pagetree-newspage-overview.svg "Overview icon")    |
+| apps-pagetree-newspage-tag             | ![Tag icon](Resources/Public/Icons/apps-pagetree-newspage-tag.svg "Tag icon")                   |
+| mimetypes-newspage-page                | ![Mimetype icon](Resources/Public/Icons/mimetypes-newspage-page.svg "Mimetype icon")            |
 
+## Miscellaneous
+
+This extension provides a "module" type for folder type pages with its own icon, to make sorting news easier. 
 
 ## Extensions providing further functionality to newspage
 
