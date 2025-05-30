@@ -11,6 +11,7 @@ defined('TYPO3') or die('Access denied.');
         'value' => 'newspage',
         'icon' => 'apps-pagetree-folder-contains-newspage',
     ];
+    $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-newspage'] = 'apps-pagetree-folder-contains-newspage';
 
     $dokType = '24';
 
