@@ -71,6 +71,17 @@ This extension provides a "module" type for folder type pages with its own icon,
 
 ## Extensions providing further functionality to newspage
 
+### b13/newspage-sorting
+
+Available at https://github.com/b13/newspage-sorting
+
+This small extension provides a hook for the TYPO3 DataHandler and automatically sorts news pages into folders by years,
+months and days if they are created within a folder that has the module type "newspage" selected.
+
+The folder structure is configurable to disable folders by month and day.
+
+Depending on the amount of news in your project, less folders could be more useful.
+
 ### b13/newspage-edit-in-layout
 
 Available at https://github.com/b13/newspage-edit-in-layout
