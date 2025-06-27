@@ -30,8 +30,8 @@ class FilterService
     {
         foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'] as $filter => $options) {
             $config['items'][] = [
-                $options['label'],
-                $filter,
+                'label' => $options['label'],
+                'value' => $filter,
             ];
         }
     }

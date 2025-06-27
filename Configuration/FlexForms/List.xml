@@ -8,9 +8,9 @@
                     <settings.limit>
                         <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit.list</label>
                         <config>
-                            <type>input</type>
+                            <type>number</type>
                             <default>5</default>
-                            <eval>int,required</eval>
+                            <required>true</required>
                         </config>
                     </settings.limit>
                 </el>

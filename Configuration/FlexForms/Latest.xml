@@ -5,9 +5,8 @@
             <settings.limit>
                 <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit.latest</label>
                 <config>
-                    <type>input</type>
+                    <type>number</type>
                     <default>5</default>
-                    <eval>int</eval>
                 </config>
             </settings.limit>
             <settings.category>
@@ -17,8 +16,8 @@
                     <renderType>selectSingle</renderType>
                     <items type="array">
                         <numIndex index="0" type="array">
-                            <numIndex index="0">LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.placeholder</numIndex>
-                            <numIndex index="1">0</numIndex>
+                            <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.placeholder</label>
+                            <value>0</value>
                         </numIndex>
                     </items>
                     <foreign_table>tx_newspage_domain_model_category</foreign_table>
