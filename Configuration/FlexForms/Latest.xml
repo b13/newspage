@@ -17,8 +17,8 @@
                     <renderType>selectSingle</renderType>
                     <items type="array">
                         <numIndex index="0" type="array">
-                            <numIndex index="0">LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.placeholder</numIndex>
-                            <numIndex index="1">0</numIndex>
+                            <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.all</label>
+                            <value>0</value>
                         </numIndex>
                     </items>
                     <foreign_table>tx_newspage_domain_model_category</foreign_table>
