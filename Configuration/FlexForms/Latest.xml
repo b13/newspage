@@ -16,7 +16,7 @@
                     <renderType>selectSingle</renderType>
                     <items type="array">
                         <numIndex index="0" type="array">
-                            <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.placeholder</label>
+                            <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:select.all</label>
                             <value>0</value>
                         </numIndex>
                     </items>
