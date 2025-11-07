@@ -5,9 +5,8 @@
             <settings.limit>
                 <label>LLL:EXT:newspage/Resources/Private/Language/locallang_be.xlf:settings.limit.latest</label>
                 <config>
-                    <type>input</type>
+                    <type>number</type>
                     <default>5</default>
-                    <eval>int</eval>
                 </config>
             </settings.limit>
             <settings.category>
