@@ -49,6 +49,7 @@ class NewsController extends ActionController
             new CreatingPaginationEvent($paginator)
         );
         $pagination = $event->getPagination() ?? new SimplePagination($paginator);
+        $contentObjectData = $this->request->getAttribute('currentContentObject');
         $this->view->assignMultiple(
             [
                 'news' => $news,
@@ -56,6 +57,7 @@ class NewsController extends ActionController
                 'paginator' => $paginator,
                 'pagination' => $pagination,
                 'pages' => range(1, $pagination->getLastPageNumber()),
+                'contentObjectData' => $contentObjectData ? $contentObjectData->data : null,
             ]
         );
         return $this->htmlResponse();
@@ -63,17 +65,24 @@ class NewsController extends ActionController
 
     public function teaserAction(): ResponseInterface
     {
+        $contentObjectData = $this->request->getAttribute('currentContentObject');
         $uids = GeneralUtility::intExplode(',', $this->settings['news'] ?? '', true);
         $news = [];
         foreach ($uids as $uid) {
             $news[] = $this->newsRepository->findByUid($uid);
         }
-        $this->view->assign('news', $news);
+        $this->view->assignMultiple(
+            [
+                'news' => $news,
+                'contentObjectData' => $contentObjectData ? $contentObjectData->data : null,
+            ]
+        );
         return $this->htmlResponse();
     }
 
     public function latestAction(): ResponseInterface
     {
+        $contentObjectData = $this->request->getAttribute('currentContentObject');
         $settings = [
             'limit' => (int)($this->settings['limit'] ?? 0),
             'filter' => [
@@ -81,7 +90,12 @@ class NewsController extends ActionController
             ],
         ];
         $news = $this->newsRepository->findLatest($settings);
-        $this->view->assign('news', $news);
+        $this->view->assignMultiple(
+            [
+                'news' => $news,
+                'contentObjectData' => $contentObjectData ? $contentObjectData->data : null,
+            ]
+        );
         return $this->htmlResponse();
     }
 
