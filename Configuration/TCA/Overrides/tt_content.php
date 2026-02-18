@@ -34,8 +34,7 @@ defined('TYPO3') or die('Access denied.');
             $pluginSignature,
             'after:header'
         );
-        $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds'][',' . $pluginSignature] =
-            $flexformPath . $plugin . '.xml';
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, $flexformPath . $plugin . '.xml');
     }
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItemGroup(
