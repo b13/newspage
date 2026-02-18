@@ -27,6 +27,14 @@ class NewsController extends ActionController
 
     public function __construct(protected NewsRepository $newsRepository) {}
 
+    protected function initializeAction(): void
+    {
+        $this->view->assign(
+            'contentObjectData',
+            $this->request->getAttribute('currentContentObject')?->data
+        );
+    }
+
     public function listAction(array $filter = [], int $page = 1): ResponseInterface
     {
         foreach ($this->settings['prefilters'] ?? [] as $type => $value) {
@@ -49,7 +57,6 @@ class NewsController extends ActionController
             new CreatingPaginationEvent($paginator)
         );
         $pagination = $event->getPagination() ?? new SimplePagination($paginator);
-        $contentObjectData = $this->request->getAttribute('currentContentObject');
         $this->view->assignMultiple(
             [
                 'news' => $news,
@@ -57,7 +64,6 @@ class NewsController extends ActionController
                 'paginator' => $paginator,
                 'pagination' => $pagination,
                 'pages' => range(1, $pagination->getLastPageNumber()),
-                'contentObjectData' => $contentObjectData ? $contentObjectData->data : null,
             ]
         );
         return $this->htmlResponse();
@@ -65,24 +71,17 @@ class NewsController extends ActionController
 
     public function teaserAction(): ResponseInterface
     {
-        $contentObjectData = $this->request->getAttribute('currentContentObject');
         $uids = GeneralUtility::intExplode(',', $this->settings['news'] ?? '', true);
         $news = [];
         foreach ($uids as $uid) {
             $news[] = $this->newsRepository->findByUid($uid);
         }
-        $this->view->assignMultiple(
-            [
-                'news' => $news,
-                'contentObjectData' => $contentObjectData ? $contentObjectData->data : null,
-            ]
-        );
+        $this->view->assign('news', $news);
         return $this->htmlResponse();
     }
 
     public function latestAction(): ResponseInterface
     {
-        $contentObjectData = $this->request->getAttribute('currentContentObject');
         $settings = [
             'limit' => (int)($this->settings['limit'] ?? 0),
             'filter' => [
@@ -90,12 +89,7 @@ class NewsController extends ActionController
             ],
         ];
         $news = $this->newsRepository->findLatest($settings);
-        $this->view->assignMultiple(
-            [
-                'news' => $news,
-                'contentObjectData' => $contentObjectData ? $contentObjectData->data : null,
-            ]
-        );
+        $this->view->assign('news', $news);
         return $this->htmlResponse();
     }
 
