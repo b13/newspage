@@ -27,14 +27,6 @@ class NewsController extends ActionController
 
     public function __construct(protected NewsRepository $newsRepository) {}
 
-    protected function initializeAction(): void
-    {
-        $this->view->assign(
-            'contentObjectData',
-            $this->request->getAttribute('currentContentObject')?->data
-        );
-    }
-
     public function listAction(array $filter = [], int $page = 1): ResponseInterface
     {
         foreach ($this->settings['prefilters'] ?? [] as $type => $value) {
@@ -64,6 +56,7 @@ class NewsController extends ActionController
                 'paginator' => $paginator,
                 'pagination' => $pagination,
                 'pages' => range(1, $pagination->getLastPageNumber()),
+                'contentObjectData' => $this->request->getAttribute('currentContentObject')?->data,
             ]
         );
         return $this->htmlResponse();
@@ -76,7 +69,10 @@ class NewsController extends ActionController
         foreach ($uids as $uid) {
             $news[] = $this->newsRepository->findByUid($uid);
         }
-        $this->view->assign('news', $news);
+        $this->view->assignMultiple([
+            'news' => $news,
+            'contentObjectData' => $this->request->getAttribute('currentContentObject')?->data,
+        ]);
         return $this->htmlResponse();
     }
 
@@ -89,7 +85,10 @@ class NewsController extends ActionController
             ],
         ];
         $news = $this->newsRepository->findLatest($settings);
-        $this->view->assign('news', $news);
+        $this->view->assignMultiple([
+            'news' => $news,
+            'contentObjectData' => $this->request->getAttribute('currentContentObject')?->data,
+        ]);
         return $this->htmlResponse();
     }
 
