@@ -34,8 +34,13 @@ defined('TYPO3') or die('Access denied.');
             $pluginSignature,
             'after:header'
         );
-        $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds'][',' . $pluginSignature] =
-            $flexformPath . $plugin . '.xml';
+        if ((new \TYPO3\CMS\Core\Information\Typo3Version())->getMajorVersion() < 14) {
+            $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds'][',' . $pluginSignature] =
+                $flexformPath . $plugin . '.xml';
+        } else {
+            $GLOBALS['TCA']['tt_content']['types'][$pluginSignature]['columnsOverrides']['pi_flexform']['config']['ds'] =
+                $flexformPath . $plugin . '.xml';
+        }
     }
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItemGroup(

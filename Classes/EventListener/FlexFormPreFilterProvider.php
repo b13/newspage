@@ -13,6 +13,7 @@ namespace B13\Newspage\EventListener;
   */
 
 use TYPO3\CMS\Core\Configuration\Event\AfterFlexFormDataStructureParsedEvent;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class FlexFormPreFilterProvider
@@ -20,7 +21,12 @@ final class FlexFormPreFilterProvider
     public function __invoke(AfterFlexFormDataStructureParsedEvent $event): void
     {
         $identifier = $event->getIdentifier();
-        if ($identifier['type'] === 'tca' && $identifier['tableName'] === 'tt_content' && $identifier['dataStructureKey'] === ',newspage_list') {
+        if ((new Typo3Version())->getMajorVersion() < 14) {
+            $dataStructureKey = ',newspage_list';
+        } else {
+            $dataStructureKey = 'newspage_list';
+        }
+        if ($identifier['type'] === 'tca' && $identifier['tableName'] === 'tt_content' && $identifier['dataStructureKey'] === $dataStructureKey) {
             $dataStructure = $event->getDataStructure();
             foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'] as $type => $filter) {
                 if ($filter['flexForm'] !== '') {
