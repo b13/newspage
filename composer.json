@@ -5,7 +5,8 @@
     "description": "Adds a new page doktype for news.",
     "homepage": "https://b13.com",
     "require": {
-        "typo3/cms-core": "^12.4 || ^13.4"
+        "typo3/cms-core": "^12.4 || ^13.4 || ^14",
+        "typo3/cms-frontend": "^12.4 || ^13.4 || ^14"
     },
     "autoload": {
         "psr-4": {
@@ -15,6 +16,16 @@
     "extra": {
         "typo3/cms": {
             "extension-key": "newspage"
+        }
+    },
+    "require-dev": {
+        "saschaegerer/phpstan-typo3": "^2",
+        "typo3/coding-standards": "^0.8.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "typo3/cms-composer-installers": false,
+            "typo3/class-alias-loader": false
         }
     }
 }

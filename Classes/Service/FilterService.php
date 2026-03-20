@@ -44,7 +44,6 @@ class FilterService
         if (!class_exists($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][$filter]['class'])) {
             throw new \InvalidArgumentException('no such class ' . $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][$filter]['class'], 1693396989);
         }
-        /** @var FilterInterface $filterObj */
         $filterObj = GeneralUtility::makeInstance($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][$filter]['class']);
         if (!$filterObj instanceof FilterInterface) {
             throw new \InvalidArgumentException($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['newspage']['filters'][$filter]['class'] . ' must implement FilterInterface', 1693396990);
