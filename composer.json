@@ -15,7 +15,8 @@
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "newspage"
+            "extension-key": "newspage",
+            "version": "3.2.1"
         }
     },
     "require-dev": {
