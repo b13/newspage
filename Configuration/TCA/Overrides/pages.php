@@ -25,6 +25,9 @@ defined('TYPO3') or die('Access denied.');
     // adding the new doktypes to the type select
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('pages', 'doktype', $newsType);
 
+    // use content page as working base
+    $GLOBALS['TCA']['pages']['types'][$dokType] = $GLOBALS['TCA']['pages']['types'][1];
+
     $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][$dokType] = 'apps-pagetree-newspage-page';
     $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][$dokType . '-hideinmenu'] = 'apps-pagetree-newspage-page-hideinmenu';
 
@@ -44,6 +47,12 @@ defined('TYPO3') or die('Access denied.');
             ],
         ],
     ];
+
+    // append required fields to TYPO3 v14 new page wizard
+    $GLOBALS['TCA']['pages']['types'][$dokType]['wizardSteps']['setup']['fields'] = array_merge(
+        $GLOBALS['TCA']['pages']['types'][$dokType]['wizardSteps']['setup']['fields'],
+        ['tx_newspage_date']
+    );
 
     $columns = [
         'tx_newspage_date' => [
